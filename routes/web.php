@@ -13,6 +13,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'IndexController@index');
+
+Route::get('/event', 'EventController@index');
+
+Route::get('/uploads', 'UploadEventController@index');
+Auth::routes();
+
+Route::get('/event', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
