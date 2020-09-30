@@ -15,7 +15,7 @@ class CreateClientsTable extends Migration
     {
         Schema::create('clients', function (Blueprint $table) {
             $table->id();
-            $table->bigInteger('event_id')->index();
+            $table->unsignedBigInteger('event_id')->index();
             $table->string('name');
             $table->timestamps();
 

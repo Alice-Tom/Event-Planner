@@ -205,16 +205,25 @@
         </thead>
         <tbody>
           <tr>
-         
-            <td>Mark</td>
-			<td>Otto</td>
-			<td>Otto</td>
-            <td>@mdo</td>
+         @foreach ($events as $event)
+			<td>{{$event->name}}</td>
+			
+			<td>
+				@foreach ($event->clients as $client)
+				{{$client->name}} <br> 
+				@endforeach
+			</td>
+
+			<td>{{$event->type}}</td>
+            <td>
+				@foreach ($event->media as $media)
+				<a href="{{$media->urls}}">{{$media->urls}}</a>
+				@endforeach
+			</td>
             <td> <button class="btn1"> <a href="" style="color: #000">View</button></a>
            <button class="btn2"> <a href="" style="color: #000" >Delete</button></a> </td>
-                
           </tr>
-          
+         @endforeach
         </tbody>
       </table>
 

@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -11,30 +12,25 @@
 	<link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/css/select2.min.css" rel="stylesheet" />
 	<link rel="stylesheet" href="uploads/css/style.css"/>
 	
-
-
-		</head>
+</head>
 		
 <body class="form-v9">
 	<div class="page-content">
 		<div class="form-v9-content" style="background-image: url('uploads/images/bg1.jpg')">
 			<form class="form-detail" action="#" method="post">
 				<h2>Upload Event</h2>
+				{{-- row 1 --}}
 				<div class="form-row-total">
-
 
 					<div class="form-row">
 						<input type="text" name="name" id="full-name" class="input-text" placeholder="Name" required>
 					</div>
-
 					<div class="form-row">
-						<select class="input-text clients" multiple="multiple">
-							
-						</select>
+						<select class="input-text clients" multiple="multiple"></select>
 					</div>
 				</div>
 
-
+				{{-- row 2 --}}
 				<div class="form-row-total">
 					<div class="form-row">
 						<input type="text" name="text" id="type" class="input-text" placeholder="Type" required>
@@ -52,6 +48,7 @@
 			</form>
 		</div>
 	</div>
+
 	<script src="{{asset('js/jquery-3.3.1.min.js')}}"></script>
 	<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/js/select2.min.js"></script>
 	<script>
@@ -61,3 +58,4 @@
 </script>
 </body><!-- This templates was made by Colorlib (https://colorlib.com) -->
 </html>
+

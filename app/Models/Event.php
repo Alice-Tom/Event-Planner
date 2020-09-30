@@ -14,7 +14,7 @@ class Event extends Model
     
     protected $guarded = [];
 
-    public function client()
+    public function clients()
     {
         return $this->hasMany(Client::class);
     }

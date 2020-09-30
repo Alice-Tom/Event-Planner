@@ -15,12 +15,12 @@ class CreateMediaTable extends Migration
     {
         Schema::create('media', function (Blueprint $table) {
             $table->id();
-            $table->bigInteger('event_id')->index();
+            $table->unsignedBigInteger('event_id')->index();
             $table->string('type');
             $table->string('url');
             $table->timestamps();
 
-            $table->foreign('event_id')->references('id')->on('events');
+            $table->foreign('event_id')->references('id')->on('events')->onDelete('cascade');
         });
     }
 
