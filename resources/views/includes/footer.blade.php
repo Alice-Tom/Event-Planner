@@ -31,7 +31,7 @@
 
 								<img src="images/shap-1.png" alt="">
 								
-								<h2 style="color: #FF5722;">The Event Planner</h2>
+								<h2 style="color: #FF5722;">Flavour Events</h2>
 								<img src="images/shap-2.png" alt="">
 							</div>
 							

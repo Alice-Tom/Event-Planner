@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Event;
+use App\Models\Media;
+use App\Models\Client;
 use Illuminate\Http\Request;
 
 class EventController extends Controller

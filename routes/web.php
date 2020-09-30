@@ -25,4 +25,4 @@ Route::get('/viewevents', 'UploadEventController@create');
 
 Auth::routes();
 
-Route::get('/event', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+// Route::get('/event', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
