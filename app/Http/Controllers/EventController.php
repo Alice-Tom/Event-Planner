@@ -20,13 +20,23 @@ class EventController extends Controller
     }
 
     /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function adminIndex()
+    {
+        return view('admin.event');
+    }
+
+    /**
      * Show the form for creating a new resource.
      *
      * @return \Illuminate\Http\Response
      */
     public function create()
     {
-        //
+        return view('admin.event.add');
     }
 
     /**
@@ -37,7 +47,7 @@ class EventController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        return $request;
     }
 
     /**

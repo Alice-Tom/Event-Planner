@@ -15,7 +15,15 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', 'IndexController@index');
 
-Route::get('/event', 'EventController@index');
+Route::prefix('event')->group(function () {
+    Route::get('/', 'EventController@index');
+});
+
+Route::prefix('admin/event')->group(function () {
+    Route::get('/', 'EventController@adminIndex');
+    Route::get('/add', 'EventController@create')->name('event.create');
+    Route::post('/add', 'EventController@store')->name('event.store');
+});
 
 Route::get('/upload', 'UploadEventController@index');
 
