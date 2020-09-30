@@ -17,7 +17,12 @@ Route::get('/', 'IndexController@index');
 
 Route::get('/event', 'EventController@index');
 
-Route::get('/uploads', 'UploadEventController@index');
+Route::get('/upload', 'UploadEventController@index');
+
+Route::get('/dashboard', 'DashboardController@index');
+
+Route::get('/viewevents', 'UploadEventController@create');
+
 Auth::routes();
 
 Route::get('/event', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

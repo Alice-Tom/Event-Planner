@@ -1,0 +1,36 @@
+
+body{
+ overflow-x: hidden;
+}
+
+.btn1
+{
+background-color: #15f800;
+width: 90px;
+border: solid;
+border-radius: 20px;
+height: 40px;
+color: white;
+}
+
+
+
+.btn2
+{
+background-color: red;
+
+width: 90px;
+border: solid;
+border-radius: 20px;
+height: 40px;
+}
+.table{
+text-align:center;
+color:black;
+ 
+}
+
+
+button{
+    color: white;
+}

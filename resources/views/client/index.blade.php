@@ -116,22 +116,6 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 	<!-- Start About us -->
 	<div id="about" class="about-box">
 		<div class="about-a1">

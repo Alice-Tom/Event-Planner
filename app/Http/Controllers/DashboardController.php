@@ -1,10 +1,10 @@
 <?php
 
 namespace App\Http\Controllers;
-use\Illuminate\Support\Facades\DB;
+
 use Illuminate\Http\Request;
 
-class UploadEventController extends Controller
+class DashboardController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,7 +13,7 @@ class UploadEventController extends Controller
      */
     public function index()
     {
-        return view('admin.upload');
+        return view('admin.dashboard');
     }
 
     /**
@@ -23,8 +23,7 @@ class UploadEventController extends Controller
      */
     public function create()
     {
-       
-        return view('admin.viewevents');
+        //
     }
 
     /**
