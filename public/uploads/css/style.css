@@ -2,11 +2,17 @@
 @import url('https://fonts.googleapis.com/css?family=Barlow:100,200,300,400,500,600,700');
 @import url('https://fonts.googleapis.com/css?family=Marck+Script');
 
-
+element{
+	width: 120%;
+}
 
 body {
 	margin:  0;
 	font-family: 'Marck Script', cursive;;
+}
+
+h2{
+	color: white;
 }
 .page-content {
 	width: 100%;
@@ -34,7 +40,7 @@ body {
 	-webkit-border-radius: 15px;
 	margin: 185px 0;
 	font-family: 'Marck Script', cursive;;
-	color: #fff;
+	color: black;
 	font-weight: 700;
 	font-size: 16px;
 	position: relative;
@@ -111,6 +117,43 @@ body {
 .form-v9-content .form-detail input:focus {
 	border: 2px solid #999;
 }
+
+.form-v9-content .form-detail select {
+	width: 100%;
+    padding: 14.5px 0px 14.5px 30px;
+    border: 2px solid #ccc;
+    appearance: unset;
+    -moz-appearance: unset;
+    -webkit-appearance: unset;
+    -o-appearance: unset;
+    -ms-appearance: unset;
+    outline: none;
+    -moz-outline: none;
+    -webkit-outline: none;
+    -o-outline: none;
+    -ms-outline: none;
+    border-radius: 27.5px;
+	-o-border-radius: 27.5px;
+	-ms-border-radius: 27.5px;
+	-moz-border-radius: 27.5px;
+	-webkit-border-radius: 27.5px;
+	font-family: 'Marck Script', cursive;;
+    font-size: 20px;
+    font-weight: 700;
+    background: rgba(255, 255, 255, 0.2)
+}
+
+
+.select2-container--default .select2-selection--multiple{
+	background: rgba(255, 255, 255, 0.2);
+	border: 2px solid #999;
+	width:100%;
+	height:50px;
+
+}
+
+
+
 .form-v9-content .form-detail .register {
 	background: #f25d5d;
 	border-radius: 25px;
