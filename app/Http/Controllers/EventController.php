@@ -54,7 +54,7 @@ class EventController extends Controller
 
         try {
             $event = Event::create([
-                'name' => $request->name,
+                'name' => ucwords($request->name),
                 'slug' => $request->name,
                 'password' => Hash::make($request->password),
                 'type' => $request->type,
@@ -112,6 +112,7 @@ class EventController extends Controller
         return view('client.event',compact('event'));
     }
 
+
     /**
      * Show the form for editing the specified resource.
      *
@@ -139,7 +140,7 @@ class EventController extends Controller
 
         try {
             $event->update([
-                'name' => $request->name,
+                'name' => ucwords($request->name),
                 'slug' => $request->name,
                 'password' => Hash::make($request->password),
                 'type' => $request->type,
@@ -150,16 +151,26 @@ class EventController extends Controller
                 'isCompleted' => $request->check
             ]);
 
-            $event->clients()->update([
-                'event_id' => null
-            ]);
-            
+            // delete old clients
+           $existingclients = $event->clients();
+           $clientdifference = array_diff($existingclients, $clients);
+           
+           foreach ($clientdifference as $singleclient){
+             $uselessclient = Client::where('name', $singleclient)
+                    ->where('event_id', $event->id)
+                    ->get();
+
+            $uselessclient->delete();
+           }
+
+        //    update the clients
             foreach ($clients as $client) {
                 $event->clients()->updateOrCreate([
                     'name' => $client
                 ]);
             }
     
+            
             foreach ($urls as $url) {
                 $type = 'video';
                 $image_extensions = ['jpg', 'jpeg', 'png', 'gif'];

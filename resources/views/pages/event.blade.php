@@ -23,6 +23,9 @@
         <!-- The Image Uploader -->
         <script src="{{ asset('js/image-uploader.min.js') }}"></script>
 
+        <!-- The Display Uploader -->
+        <script src="{{ asset('js/display-uploader.min.js') }}"></script>
+
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
     </head>
             

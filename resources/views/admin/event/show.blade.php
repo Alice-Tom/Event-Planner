@@ -32,7 +32,13 @@
             imagesInputName: 'media',
 			preloaded: preloaded
         });
+        $('.display-upload').imageUploader({
+            extensions: ['.jpg','.jpeg','.png', '.mp4'],
+            mimes: ['image/jpeg','image/png', 'video/mp4', ''],
+            imagesInputName: 'media',
+        });
     });
+
 </script>
 
 @endsection

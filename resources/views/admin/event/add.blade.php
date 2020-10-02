@@ -24,9 +24,6 @@
             imagesInputName: 'media',
         });
     });
-</script>
-
-<script>
     $(document).ready(function () {
         $('.display-upload').imageUploader({
             extensions: ['.jpg','.jpeg','.png', '.mp4'],

@@ -17,8 +17,9 @@ Route::get('/', 'IndexController@index');
 
 Route::prefix('event')->group(function () {
     Route::get('/', 'EventController@index');
-    Route::get('/event/{event}', 'EventController@showEvent')->name('event.show');
+   
 });
+Route::get('/event/{event}', 'EventController@showEvent')->name('event.showEvent');
 
 Route::get('/', 'EventController@adminIndex');
 
