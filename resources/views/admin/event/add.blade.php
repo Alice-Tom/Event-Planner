@@ -3,7 +3,7 @@
 @section('content')
 
 <div class="page-content">
-	<div class="form-v9-content" style="background-image: url({{asset('uploads/images/bg1.jpg')}})">
+	<div class="form-v9-content" style="background-image: url({{asset('css/images/bg1.jpg')}})">
 		<h2>Register Event</h2>
         <form 
             class="form-detail" 

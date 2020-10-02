@@ -5,9 +5,7 @@
 		<div class="footer_content">
 			<div class="container">
 				<div class="row">
-					<div class="col">
-						<div class="footer_logo text-center"><a href="#"><img src="{{asset('images/.png')}}" alt=""></a></div>
-					</div>
+					
 				</div>
 				<div class="row footer_row">
 					<div class="col-lg-4 footer_col">

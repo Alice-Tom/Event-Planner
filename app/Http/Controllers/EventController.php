@@ -52,8 +52,6 @@ class EventController extends Controller
 
         $urls = $request->file('media') ?? [];
 
-        $display_photo = 
-
         $name = $request->name;
 
         $explodedName = explode(" ",$name);
@@ -145,6 +143,8 @@ class EventController extends Controller
 
         $urls = $request->file('media') ?? [];
 
+        $document = $request->file('document')[0] ?? [];
+
         try {
             $event->update([
                 'name' => ucwords($request->name),
@@ -152,14 +152,15 @@ class EventController extends Controller
                 'password' => Hash::make($request->password),
                 'type' => $request->type,
                 'description' => $request->description,
-                'display_photo' => $request->file('display_photo')->store('public/events_images'),
+                // 'display_photo' => $document->store('public/events_images'),
                 'date' => $request->date,
                 'expiry_date' => $request->expiry_date,
-                'isCompleted' => $request->check
+                'isCompleted' => isset($request->isCompleted) ? true : false
             ]);
 
             // delete old clients
-           $existingclients = $event->clients();
+           $existingclients = Client::select('name')->where('event_id', $event->id)->get();
+           return $existingclients->all();
            $clientdifference = array_diff($existingclients, $clients);
            
            foreach ($clientdifference as $singleclient){
