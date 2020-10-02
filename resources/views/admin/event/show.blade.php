@@ -8,7 +8,7 @@
         <form 
             class="form-detail" 
             method="post"
-            action="{{ route('event.store') }}" 
+            action="{{ route('event.update', $event->id) }}" 
             enctype="multipart/form-data"
         >
             @csrf
@@ -18,21 +18,21 @@
 </div>
 <script>
     $(document).ready(function () {
+        let media = {!! json_encode($event->media ?? array()) !!}
+        let preloaded = media.map( media => {
+			return {
+				id : media.id,
+				src : media.urls
+			}
+		});
+
         $('.media-upload').imageUploader({
             extensions: ['.jpg','.jpeg','.png', '.mp4'],
             mimes: ['image/jpeg','image/png', 'video/mp4', ''],
             imagesInputName: 'media',
+			preloaded: preloaded
         });
     });
 </script>
 
-<script>
-    $(document).ready(function () {
-        $('.display-upload').imageUploader({
-            extensions: ['.jpg','.jpeg','.png', '.mp4'],
-            mimes: ['image/jpeg','image/png', 'video/mp4', ''],
-            imagesInputName: 'media',
-        });
-    });
-</script>
 @endsection

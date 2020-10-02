@@ -18,21 +18,16 @@
     <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
 	<link href="asset/css/bootstrap.css" type="text/css" rel="stylesheet" media="all">
 	<link href="asset/css/style.css" type="text/css" rel="stylesheet" media="all">  
-	
 
-
-<link href="asset/css/font-awesome.css" rel="stylesheet">   <!-- font-awesome icons -->
-<link rel="stylesheet" href="css/swipebox.css"> 
-	
-	
+	<link href="asset/css/font-awesome.css" rel="stylesheet">   <!-- font-awesome icons -->
+	<link rel="stylesheet" href="css/swipebox.css"> 
+		
+	<link href="//fonts.googleapis.com/css?family=Cookie" rel="stylesheet">
+	<link href="//fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700" rel="stylesheet">
 	<!-- //Custom Theme files -->   
 
 	<link rel="stylesheet" type="text/css" href="styles/main_styles.css">
 	<link rel="stylesheet" type="text/css" href="styles/responsive.css">
-
-
-
-
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="css/bootstrap.min.css">
@@ -67,60 +62,59 @@
 				</div>
 			</div>
 		</div>
-
-
-
     </div><!-- end loader -->
     <!-- END LOADER -->
 	
+		<div class="banner_content text-center">
+			<img class="head1" src="images/shap1.jpg" alt="">
+			@foreach ($event as $event)
+				<h1>{{$event->name}}'s {{$event->type}}</h1>
+				@endforeach
+					<img class="head" src="images/shap2.jpg" alt="">
+		</div>
 	
-<!-- Start slider -->
-
-
-<div class="banner_content text-center">
-
-								<img class="head1" src="images/shap1.jpg" alt="">
+	<!-- Start Banner -->
+	<div class="ulockd-home-slider">
+		<div class="container-fluid">
+			<div class="row">
+				<div class="pogoSlider" id="js-main-slider">
+					<div class="pogoSlider-slide" data-transition="zipReveal" data-duration="1500" style="background-image:url(images/slider-01.jpg);">
+						<div class="lbox-caption">
+							<div class="lbox-details">
+								<h1>Flavour Events</h1>
 								
-								<h1>Sarah's Birthday</h1>
-								<img class="head" src="images/shap2.jpg" alt="">
-							</div>
-							
-
-
-
-		<section id="home" class="video-hero js-fullheight" style="height: 500px; background-image: url(images/bg_1.jpg); background-size:cover; background-position: top center;" data-stellar-background-ratio="0.5">
-	  	<div class="overlay"></div>
-			<a class="player" data-property="{videoURL:'https://www.youtube.com/watch?v=Mjjw19B7rMk',containment:'#home', showControls:false, autoPlay:true, loop:true, mute:true, startAt:0, opacity:1, quality:'default',optimizeDisplay:true}"></a>
-			<div class="container">
-				<div class="row js-fullheight justify-content-center d-flex align-items-center">
-					<div class="col-md-12">
-						<div class="text text-center">
-							<div class="icon">
-								<span class="flaticon-rose-outline-variant-with-vines-and-leaves"></span>
-							</div>
-						
-							<div id="timer" class="d-flex">
-							  <div class="time" id="days"></div>
-							  <div class="time pl-3" id="hours"></div>
-							  <div class="time pl-3" id="minutes"></div>
-							  <div class="time pl-3" id="seconds"></div>
+								<p><strong>Let us be the one to make your day special</strong></p>
+								<a href="" class="btn ">Contact</a>
 							</div>
 						</div>
 					</div>
-				</div>
+					<div class="pogoSlider-slide" data-transition="blocksReveal" data-duration="1500" style="background-image:url(images/slider-02.jpg);">
+						<div class="lbox-caption">
+							<div class="lbox-details">
+							<h1>Flavour Events</h1>
+								
+								<p><strong>We make things happen</strong></p>
+								<a href="#" class="btn ">Contact</a>
+							</div>
+						</div>
+					</div>
+					<div class="pogoSlider-slide" data-transition="shrinkReveal" data-duration="2000" style="background-image:url(images/slider-03.jpg);">
+						<div class="lbox-caption">
+							<div class="lbox-details">
+							<h1>Flavour Events</h1>
+								
+								<p><strong>Let us be the one to make your day special</strong></p>
+								<a href="#" class="btn">Contact</a>
+							</div>
+						</div>
+						
+					</div>
+				</div><!-- .pogoSlider -->
 			</div>
-		</section>
-
-
-
+		</div>
+	</div>
+	<!-- End Banner -->
 <!-- End slider -->
-
-
-
-
-
-
-
 
 	<!-- Start Gallery -->
 	<div id="portfolio" class="services portfolio">
@@ -135,20 +129,16 @@
 					<li class="active" data-filter="all">All</li>
 					<li data-filter="1">Pictures</li>
 					<li data-filter="2">Videos</li>
-					
 				</ul>
 				<div class="filtr-container">
 					<div class="col-md-4 col-sm-4 col-xs-6 filtr-item" data-category="1" data-sort="Busy streets">
 						<div class="agileits-img">
 							<a href="images/g1.jpg" download title="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis maximus tortor diam, ac lobortis justo rutrum quis. Praesent non purus fermentum, eleifend velit non">
 						 <img src="images/g1.jpg" alt=""  />
-								
 								<div class="wthree-pcatn">
 									<h4>download</h4>  
 								</div>
-						
 							</a> 
-							
 						</div>
 					</div>
 					<div class="col-md-4 col-sm-4 col-xs-6 filtr-item" data-category="2" data-sort="Luminous night">
@@ -237,21 +227,8 @@
 		</div>
 	</div>
 	<!-- end portfolio -->
-
-
-
-	
-	
-	
-
 	
 	@include('includes.footer')
-
-
-
-
-
-
 
 	<!-- ALL JS FILES -->
 	<script src="js/jquery.min.js"></script>
@@ -265,12 +242,10 @@
 	<script src="js/form-validator.min.js"></script>
     <script src="js/contact-form-script.js"></script>
 	<script src="js/custom.js"></script>
-	
 
 	<!-- js -->
 	<script src="js/jquery-2.2.3.min.js"></script> 
 	<!-- //js -->
-
 
 	<!-- Kick off Filterizr -->
 	<script src="js/jquery.filterizr.js"></script>  
@@ -323,14 +298,8 @@
 	<!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-    <script src="js/bootstrap.js"></script>
-
-
-
-
-
-
-
-    
-  </body>
+	<script src="js/bootstrap.js"></script>
+	
+		
+</body>
 </html>

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use\Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Hash;
 use App\Models\Event;
 use App\Models\Media;
 use App\Models\Client;
@@ -49,20 +50,20 @@ class EventController extends Controller
     {
         $clients = $request->clients;
 
-        $urls = $request->file('media');
+        $urls = $request->file('media') ?? [];
 
         try {
             $event = Event::create([
                 'name' => $request->name,
                 'slug' => $request->name,
-                'password' => $request->password,
+                'password' => Hash::make($request->password),
                 'type' => $request->type,
                 'description' => $request->description,
                 'token' => $request->description,
                 'display_photo' => $request->display_photo,
                 'date' => $request->date,
                 'expiry_date' => $request->expiry_date,
-                'isCompleted' => true
+                'isCompleted' => $request->check
             ]);
             
     
@@ -73,11 +74,20 @@ class EventController extends Controller
             }
     
             foreach ($urls as $url) {
+                $type = 'video';
+                $image_extensions = ['jpg', 'jpeg', 'png', 'gif'];
+                
+                if (in_array($url->extension(), $image_extensions)) {
+                   $type = 'photo';
+                }
                 $event->media()->create([
-                    'type'=> "photo", 
-                    'url' => $url->store('public/events_images')
+                    'type'=> $type, 
+                    'url' => $url->store('public/events_images'),
+                    'actual_name' => $url->getClientOriginalName() 
                 ]);
             }
+
+        
         } catch (\Throwable $th) {
             throw $th;
         }
@@ -92,9 +102,14 @@ class EventController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Event $event)
     {
-        return view('admin.event.dashboard',compact('event'));
+        return view('admin.event.show',compact('event'));
+    }
+
+    public function showEvent(Event $event)
+    {
+        return view('client.event',compact('event'));
     }
 
     /**
@@ -103,7 +118,7 @@ class EventController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Event $event)
     {
         //
     }
@@ -115,9 +130,60 @@ class EventController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Event $event)
     {
-        //
+    //    return $request;
+        $clients = $request->clients;
+
+        $urls = $request->file('media') ?? [];
+
+        try {
+            $event->update([
+                'name' => $request->name,
+                'slug' => $request->name,
+                'password' => Hash::make($request->password),
+                'type' => $request->type,
+                'description' => $request->description,
+                'display_photo' => $request->display_photo,
+                'date' => $request->date,
+                'expiry_date' => $request->expiry_date,
+                'isCompleted' => $request->check
+            ]);
+
+            $event->clients()->update([
+                'event_id' => null
+            ]);
+            
+            foreach ($clients as $client) {
+                $event->clients()->updateOrCreate([
+                    'name' => $client
+                ]);
+            }
+    
+            foreach ($urls as $url) {
+                $type = 'video';
+                $image_extensions = ['jpg', 'jpeg', 'png', 'gif'];
+                
+                if (in_array($url->extension(), $image_extensions)) {
+                   $type = 'photo';
+                }
+    
+                $event->media()->updateOrCreate(
+                    [
+                        'type'=> $type, 
+                        'actual_name' => $url->getClientOriginalName() 
+                    ],
+                    [
+                        'url' => $url->store('public/events_images'),
+                    ]
+            );
+            }
+        } catch (\Throwable $th) {
+            throw $th;
+        }
+        
+        return back()->with('Post Update', 'Successfully');
+
     }
 
     /**

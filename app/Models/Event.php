@@ -14,6 +14,8 @@ class Event extends Model
     
     protected $guarded = [];
 
+    protected $appends = ['urls'];
+
     public function clients()
     {
         return $this->hasMany(Client::class);
@@ -22,5 +24,10 @@ class Event extends Model
     public function media()
     {
         return $this->hasMany(Media::class);
+    }
+
+    public function getUrlsAttribute()
+    {
+        return Storage::url($this->display_photo);
     }
 }
