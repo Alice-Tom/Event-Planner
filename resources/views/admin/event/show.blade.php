@@ -19,19 +19,34 @@
 <script>
     $(document).ready(function () {
         let media = {!! json_encode($event->media ?? array()) !!}
-        let preloaded = media.map( media => {
+        let display_photo = {!! json_encode($event ?? array()) !!}
+
+        let preloaded_media = media.map( media => {
 			return {
 				id : media.id,
 				src : media.urls
 			}
 		});
 
+        let preloaded_display_photo = [{
+            id : display_photo.id,
+            src : display_photo.urls
+        }]
+
         $('.media-upload').imageUploader({
             extensions: ['.jpg','.jpeg','.png', '.mp4'],
             mimes: ['image/jpeg','image/png', 'video/mp4', ''],
             imagesInputName: 'media',
-			preloaded: preloaded
+			preloaded: preloaded_media
         });
+		
+		$('.display-upload').imageUploader({
+			extensions: ['.jpg','.jpeg','.png', '.mp4'],
+			mimes: ['image/jpeg','image/png', 'video/mp4', ''],
+            imagesInputName: 'display_photo',
+			preloaded: preloaded_display_photo,
+            maxFiles: 1,
+		});
     });
 </script>
 
