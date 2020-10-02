@@ -22,14 +22,14 @@
             extensions: ['.jpg','.jpeg','.png', '.mp4'],
             mimes: ['image/jpeg','image/png', 'video/mp4', ''],
             imagesInputName: 'media',
-        });
-    });
-    $(document).ready(function () {
-        $('.display-upload').imageUploader({
-            extensions: ['.jpg','.jpeg','.png', '.mp4'],
-            mimes: ['image/jpeg','image/png', 'video/mp4', ''],
-            imagesInputName: 'media',
-        });
+		});
+		
+		$('.display-upload').imageUploader({
+			extensions: ['.jpg','.jpeg','.png', '.mp4'],
+			mimes: ['image/jpeg','image/png', 'video/mp4', ''],
+			imagesInputName: 'display_photo',
+			maxFiles: 1,
+		});
     });
 </script>
 @endsection

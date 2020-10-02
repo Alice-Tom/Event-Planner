@@ -52,18 +52,26 @@ class EventController extends Controller
 
         $urls = $request->file('media') ?? [];
 
+        $display_photo = 
+
+        $name = $request->name;
+
+        $explodedName = explode(" ",$name);
+
+        $slug = join("-", $explodedName);
+
         try {
             $event = Event::create([
-                'name' => ucwords($request->name),
-                'slug' => $request->name,
+                'name' => $name,
+                'slug' => $slug,
                 'password' => Hash::make($request->password),
                 'type' => $request->type,
                 'description' => $request->description,
                 'token' => $request->description,
-                'display_photo' => $request->display_photo,
+                'display_photo' => $request->file('display_photo')[0]->store('public/events_images'),
                 'date' => $request->date,
                 'expiry_date' => $request->expiry_date,
-                'isCompleted' => $request->check
+                'isCompleted' => isset($request->isCompleted) ? $request->isCompleted : false
             ]);
             
     
@@ -133,7 +141,6 @@ class EventController extends Controller
      */
     public function update(Request $request, Event $event)
     {
-    //    return $request;
         $clients = $request->clients;
 
         $urls = $request->file('media') ?? [];
@@ -145,7 +152,7 @@ class EventController extends Controller
                 'password' => Hash::make($request->password),
                 'type' => $request->type,
                 'description' => $request->description,
-                'display_photo' => $request->display_photo,
+                'display_photo' => $request->file('display_photo')->store('public/events_images'),
                 'date' => $request->date,
                 'expiry_date' => $request->expiry_date,
                 'isCompleted' => $request->check
@@ -170,7 +177,7 @@ class EventController extends Controller
                 ]);
             }
     
-            
+
             foreach ($urls as $url) {
                 $type = 'video';
                 $image_extensions = ['jpg', 'jpeg', 'png', 'gif'];

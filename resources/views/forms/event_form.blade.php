@@ -71,7 +71,7 @@
 		<div class="form-row">
 	{{-- checkbox	 --}}
 			<label class="check-label">Event Completed</label>
-				<input type="checkbox" class="input-checkbox" name="check" id="check" value="{{$event->check ?? ''}}">
+				<input type="checkbox" class="input-checkbox" name="isCompleted" id="isCompleted" {{isset($event) ? ($event->isCompleted ? 'checked' : '') : '' }}>
 			</div>
 		</div>
 <br>
