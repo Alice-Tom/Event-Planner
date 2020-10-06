@@ -66,70 +66,66 @@
     <!-- END LOADER -->
 	
 		<div class="banner_content text-center">
-			<img class="head1" src="{{ asset('images/shap1.jpg') }}" alt="">
+			<img class="head" src="{{ asset('images/unnamed.png') }}" alt="">
 			<h1>{{$event->name}}</h1>
-			<img class="head" src="{{ asset('images/shap2.jpg') }}" alt="">
 		</div>
 	
 	<!-- Start Banner -->
-	<div class="ulockd-home-slider">
-		<div class="container-fluid">
-			<div class="row">
-				<div class="pogoSlider" id="js-main-slider">
-					<div class="pogoSlider-slide" data-transition="zipReveal" data-duration="1500" style="background-image:url(images/slider-01.jpg);">
-						<div class="lbox-caption">
-							<div class="lbox-details">
-								<h1>Flavour Events</h1>
-								
-								<p><strong>Let us be the one to make your day special</strong></p>
-								<a href="" class="btn ">Contact</a>
-							</div>
-						</div>
-					</div>
-					<div class="pogoSlider-slide" data-transition="blocksReveal" data-duration="1500" style="background-image:url(images/slider-02.jpg);">
-						<div class="lbox-caption">
-							<div class="lbox-details">
-							<h1>Flavour Events</h1>
-								
-								<p><strong>We make things happen</strong></p>
-								<a href="#" class="btn ">Contact</a>
-							</div>
-						</div>
-					</div>
-					<div class="pogoSlider-slide" data-transition="shrinkReveal" data-duration="2000" style="background-image:url(images/slider-03.jpg);">
-						<div class="lbox-caption">
-							<div class="lbox-details">
-							<h1>Flavour Events</h1>
-								
-								<p><strong>Let us be the one to make your day special</strong></p>
-								<a href="#" class="btn">Contact</a>
-							</div>
-						</div>
-						
-					</div>
-				</div><!-- .pogoSlider -->
-			</div>
-		</div>
+	<div class="dp">
+		<img class="banner" src="{{ $event->urls}}" alt="">
 	</div>
 	<!-- End Banner -->
-<!-- End slider -->
 
-	<!-- Start Gallery -->
+	<!-- portfolio -->
 	<div id="portfolio" class="services portfolio">
 		<div class="container">   
 			<div class="col-lg-12">
 				<div class="title-box">
-					<h2> <span>Gallery</span></h2>
+					<h2><span>Gallery</span></h2>
 				</div>
-			</div>  
+			</div>
 			<div class="gallery_gds">
 				<ul class="simplefilter">
-					<li class="active" data-filter="all">All</li>
-					<li data-filter="photo">Pictures</li>
-					<li data-filter="video">Videos</li>
+					<li class="active" data-filter="all">ALL</li>
+					<li data-filter="1">VIDEOS</li>
+					<li data-filter="2">PICTURES</li>
 				</ul>
 				<div class="filtr-container">
+
 					@foreach ($event->media as $media)
+					<div class="col-md-4 col-sm-4 col-xs-6 filtr-item" data-category="2" data-sort="Busy streets">
+						<div class="agileits-img">
+							<a href="{{ $media->urls }}" download >
+								<img src="{{ $media->urls }}" alt=""  /> 
+								<div class="wthree-pcatn">
+									<h4>Download</h4>  
+								</div> 
+							</a> 
+						</div>
+					</div>
+					@endforeach
+					
+					@foreach ($event->media as $media)
+					<div class="col-md-4 col-sm-4 col-xs-6 filtr-item" data-category="2" data-sort="Busy streets">
+						<div class="agileits-img">
+							<a href="{{ $media->type }}" download title="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis maximus tortor diam, ac lobortis justo rutrum quis. Praesent non purus fermentum, eleifend velit non">
+								<img src="{{ $media->type }}" alt=""  /> 
+								<div class="wthree-pcatn">
+									<h4>Our Portfolio</h4>  
+								</div> 
+							</a> 
+						</div>
+					</div>
+					@endforeach
+					
+				   <div class="clearfix"> </div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- //portfolio --> 
+
+					{{-- @foreach ($event->media as $media)
 					<div class="col-md-4 col-sm-4 col-xs-6 filtr-item" data-category="{{ $media->type }}" data-sort="Peaceful lake">
 						<div class="agileits-img">
 							<a href="{{ $media->urls }}" download title="Ac lobortis justo rutrum quis. Praesent non purus fermentum, duis maximus tortor diam, eleifend velit non">
@@ -140,7 +136,7 @@
 							</a>	
 						</div>
 					</div>
-					@endforeach
+					@endforeach --}}
 				   <div class="clearfix"> </div>
 				</div>
 			</div>
@@ -156,7 +152,6 @@
 	<script src="{{ asset('js/bootstrap.min.js') }}"></script>
     <!-- ALL PLUGINS -->
 	<script src="{{ asset('js/jquery.magnific-popup.min.js') }}"></script>
-    <script src="{{ asset('js/jquery.pogo-slider.min.js') }}"></script> 
 	<script src="{{ asset('js/slider-index.js') }}"></script>
 	<script src="{{ asset('js/smoothscroll.js') }}"></script>
 	<script src="{{ asset('js/form-validator.min.js') }}"></script>

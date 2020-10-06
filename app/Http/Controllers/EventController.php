@@ -27,7 +27,7 @@ class EventController extends Controller
      */
     public function adminIndex()
     {
-        return view('admin.event');
+        return view('admin.dashboard');
     }
 
     /**
@@ -60,7 +60,7 @@ class EventController extends Controller
 
         try {
             $event = Event::create([
-                'name' => $name,
+                'name' => ucwords($name),
                 'slug' => $slug,
                 'password' => Hash::make($request->password),
                 'type' => $request->type,

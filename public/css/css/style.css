@@ -117,6 +117,7 @@ label{
 	font-size: 22px;
 	position: relative;
 	left: 17%;
+	cursor: pointer;
 	
 	
 }
@@ -187,6 +188,7 @@ textarea#description.input-text {
    position: relative;
    top: 5px;
    left: 16%;
+   cursor: pointer;
 
 } 
 
@@ -222,11 +224,13 @@ textarea#description.input-text {
 	-webkit-border-radius: 27.5px;
 	font-family: 'Marck Script', cursive;;
     font-size: 20px;
-    font-weight: 700;
+	font-weight: 700;
+	cursor: pointer;
     background: rgba(255, 255, 255, 0.2)
 }
 .form-v9-content .form-detail select:focus {
 	border: 2px solid #999;
+	cursor: pointer;
 }
 
 .select2-container--default .select2-selection--multiple{
@@ -268,6 +272,16 @@ textarea#description.input-text {
 	font-size: 20px;
 }
 
+
+/* display-uploader */
+.display-upload .uploaded .uploaded-image img{
+	width:350%;
+	height:300%;
+	object-fit:cover;
+	position:absolute;
+	box-align: center;
+
+}
 .form-v9-content .form-detail .register:hover {
 	background: #d95252;
 }

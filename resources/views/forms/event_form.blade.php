@@ -64,14 +64,13 @@
 					<div class="display-upload" style="padding-top: .5rem;"></div>
 				</div>
 			</div>
-		</div>
+		</div>ff
 <br>
 	{{-- row 5 --}}
 	<div class="form-row-total">
 		<div class="form-row">
 	{{-- checkbox	 --}}
-			<label class="check-label">Event Completed</label>
-				<input type="checkbox" class="input-checkbox" name="isCompleted" id="isCompleted" {{isset($event) ? ($event->isCompleted ? 'checked' : '') : '' }}>
+		<label class="check-label">Event Completed<input type="checkbox" class="input-checkbox" name="isCompleted" id="isCompleted" {{isset($event) ? ($event->isCompleted ? 'checked' : '') : '' }}></label>
 			</div>
 		</div>
 <br>

@@ -79,30 +79,26 @@
 					<div class="pogoSlider-slide" data-transition="zipReveal" data-duration="1500" style="background-image:url(images/slider-01.jpg);">
 						<div class="lbox-caption">
 							<div class="lbox-details">
-								<h1>The Event Planner</h1>
+								<h1>Flavour Events</h1>
 								
 								<p><strong>Let us be the one to make your day special</strong></p>
-								<a href="" class="btn ">Contact</a>
+								
 							</div>
 						</div>
 					</div>
 					<div class="pogoSlider-slide" data-transition="blocksReveal" data-duration="1500" style="background-image:url(images/slider-02.jpg);">
 						<div class="lbox-caption">
 							<div class="lbox-details">
-							<h1>The Event Planner</h1>
-								
+							<h1>Flavour Events</h1>
 								<p><strong>We make things happen</strong></p>
-								<a href="#" class="btn ">Contact</a>
 							</div>
 						</div>
 					</div>
 					<div class="pogoSlider-slide" data-transition="shrinkReveal" data-duration="2000" style="background-image:url(images/slider-03.jpg);">
 						<div class="lbox-caption">
 							<div class="lbox-details">
-							<h1>The Event Planner</h1>
-								
+							<h1>Flavour Events</h1>
 								<p><strong>Let us be the one to make your day special</strong></p>
-								<a href="#" class="btn">Contact</a>
 							</div>
 						</div>
 						
@@ -112,26 +108,6 @@
 		</div>
 	</div>
 	<!-- End Banner -->
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 	<!-- Start About us -->
 	<div id="about" class="about-box">
@@ -148,25 +124,18 @@
 					<div class="col-lg-12 col-md-12 col-sm-12">
 						<div class="row align-items-center about-main-info">
 							<div class="col-lg-8 col-md-6 col-sm-12">
-								<h2> Welcome to <span>The Event Planner</span></h2>
+								<h2> Welcome to <span>Flavour Events</span></h2>
 								<p>From small intimate gatherings to large and lavish affairs, our weddings and parties are
 									memorable, magical experiences, perfectly planned and beautifully executed. </p>
 							</div>
 							<div class="col-lg-4 col-md-6 col-sm-12">
 								<div class="about-img">
-								
-							
-						
 								<div class="video-wrap">
 								<a href="http://example.com/">
 								<div class="play-btn"></div>
-									
-								
 								<img class="img-fluid rounded" src="images/about-img-01.jpg">
-								
 						</a>
 								</div>
-							
 							</div>
 						</div>
 						<div class="row align-items-center about-main-info">
