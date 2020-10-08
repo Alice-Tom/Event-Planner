@@ -34,11 +34,7 @@
     <!-- Pogo Slider CSS -->
     <link rel="stylesheet" href="{{ asset('css/pogo-slider.min.css') }}">
 	<!-- Site CSS -->
-<<<<<<< HEAD
-    <link rel="stylesheet" href="css/style.css">
-=======
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
->>>>>>> 3842fe13c47c026d8bcc2a13c62e36352a9b69a5
     <!-- Responsive CSS -->
     <link rel="stylesheet" href="{{ asset('css/responsive.css') }}">
     <!-- Custom CSS -->
@@ -70,18 +66,12 @@
     <!-- END LOADER -->
 
 		<div class="banner_content text-center">
-<<<<<<< HEAD
 			<img class="head1" src="images/shap1.jpg" alt="">
 				<h1>yo</h1>
 					<img class="head" src="images/shap2.jpg" alt="">
-=======
-			<img class="head" src="{{ asset('images/unnamed.png') }}" alt="">
-			<h1>{{$event->name}}</h1>
->>>>>>> 3842fe13c47c026d8bcc2a13c62e36352a9b69a5
 		</div>
 
 	<!-- Start Banner -->
-<<<<<<< HEAD
 	<div class="ulockd-home-slider">
 		<div class="container-fluid">
 			<div class="row">
@@ -120,10 +110,6 @@
 				</div><!-- .pogoSlider -->
 			</div>
 		</div>
-=======
-	<div class="dp">
-		<img class="banner" src="{{ $event->urls}}" alt="">
->>>>>>> 3842fe13c47c026d8bcc2a13c62e36352a9b69a5
 	</div>
 	<!-- End Banner -->
 
@@ -142,7 +128,6 @@
 					<li data-filter="2">PICTURES</li>
 				</ul>
 				<div class="filtr-container">
-<<<<<<< HEAD
 					<div class="col-md-4 col-sm-4 col-xs-6 filtr-item" data-category="1" data-sort="Busy streets">
 						<div class="agileits-img">
 							<a href="images/g1.jpg" download title="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis maximus tortor diam, ac lobortis justo rutrum quis. Praesent non purus fermentum, eleifend velit non">
@@ -204,53 +189,39 @@
 						</div>
 					</div>
 					<div class="col-md-4 col-sm-4 col-xs-6 filtr-item" data-category="1" data-sort="Peaceful lake">
-=======
 
-					@foreach ($event->media as $media)
+					{{-- @foreach ($event->media as $media)
 					<div class="col-md-4 col-sm-4 col-xs-6 filtr-item" data-category="2" data-sort="Busy streets">
->>>>>>> 3842fe13c47c026d8bcc2a13c62e36352a9b69a5
 						<div class="agileits-img">
 							<a href="{{ $media->urls }}" download >
 								<img src="{{ $media->urls }}" alt=""  />
 								<div class="wthree-pcatn">
-<<<<<<< HEAD
-								<h4>download</h4>
-								</div>
-							</a>
-=======
 									<h4>Download</h4>
 								</div>
 							</a>
->>>>>>> 3842fe13c47c026d8bcc2a13c62e36352a9b69a5
 						</div>
 					</div>
-					@endforeach
+					@endforeach --}}
 
-					@foreach ($event->media as $media)
+					{{-- @foreach ($event->media as $media)
 					<div class="col-md-4 col-sm-4 col-xs-6 filtr-item" data-category="2" data-sort="Busy streets">
 						<div class="agileits-img">
 							<a href="{{ $media->type }}" download title="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis maximus tortor diam, ac lobortis justo rutrum quis. Praesent non purus fermentum, eleifend velit non">
 								<img src="{{ $media->type }}" alt=""  />
 								<div class="wthree-pcatn">
-<<<<<<< HEAD
-                                <h4>download</h4>
-								</div>
-							</a>
-=======
 									<h4>Our Portfolio</h4>
 								</div>
 							</a>
->>>>>>> 3842fe13c47c026d8bcc2a13c62e36352a9b69a5
 						</div>
 					</div>
-					@endforeach
+					@endforeach --}}
 
 				   <div class="clearfix"> </div>
 				</div>
 			</div>
 		</div>
 	</div>
-	<!-- //portfolio -->
+	{{-- <!-- //portfolio --> --}}
 
 					{{-- @foreach ($event->media as $media)
 					<div class="col-md-4 col-sm-4 col-xs-6 filtr-item" data-category="{{ $media->type }}" data-sort="Peaceful lake">
@@ -278,18 +249,6 @@
 	<script src="{{ asset('js/popper.min.js') }}"></script>
 	<script src="{{ asset('js/bootstrap.min.js') }}"></script>
     <!-- ALL PLUGINS -->
-<<<<<<< HEAD
-	<script src="js/jquery.magnific-popup.min.js"></script>
-    <script src="js/jquery.pogo-slider.min.js"></script>
-	<script src="js/slider-index.js"></script>
-	<script src="js/smoothscroll.js"></script>
-	<script src="js/form-validator.min.js"></script>
-    <script src="js/contact-form-script.js"></script>
-	<script src="js/custom.js"></script>
-
-	<!-- js -->
-	<script src="js/jquery-2.2.3.min.js"></script>
-=======
 	<script src="{{ asset('js/jquery.magnific-popup.min.js') }}"></script>
 	<script src="{{ asset('js/slider-index.js') }}"></script>
 	<script src="{{ asset('js/smoothscroll.js') }}"></script>
@@ -299,7 +258,6 @@
 
 	<!-- js -->
 	<script src="{{ asset('js/jquery-2.2.3.min.js') }}"></script>
->>>>>>> 3842fe13c47c026d8bcc2a13c62e36352a9b69a5
 	<!-- //js -->
 
 	<script>
@@ -313,14 +271,9 @@
 			});
 	</script>
 
-	<!-- Kick off Filterizr -->
-<<<<<<< HEAD
-	<script src="js/jquery.filterizr.js"></script>
-	<script src="js/controls.js"></script>
-=======
+	// Kick off Filterizr
 	<script src="{{ asset('js/jquery.filterizr.js') }}"></script>
 	<script src="{{ asset('js/controls.js') }}"></script>
->>>>>>> 3842fe13c47c026d8bcc2a13c62e36352a9b69a5
 	<script type="text/javascript">
 		$(function() {
 			//Initialize filterizr with default options
@@ -328,27 +281,17 @@
 		});
 	</script>
 	<!-- swipe box js -->
-<<<<<<< HEAD
-	<script src="js/jquery.swipebox.min.js"></script>
-=======
 	<script src="{{ asset('js/jquery.swipebox.min.js') }}"></script>
->>>>>>> 3842fe13c47c026d8bcc2a13c62e36352a9b69a5
 	<script type="text/javascript">
 			jQuery(function($) {
 				$(".swipebox").swipebox();
 			});
 	</script>
-	<!-- //swipe box js -->
-	<!-- start-smooth-scrolling -->
-<<<<<<< HEAD
-	<script src="js/SmoothScroll.min.js"></script>
-	<script type="text/javascript" src="js/move-top.js"></script>
-	<script type="text/javascript" src="js/easing.js"></script>
-=======
+	//swipe box js
+	// start-smooth-scrolling
 	<script src="{{ asset('js/SmoothScroll.min.js') }}"></script>
 	<script type="text/javascript" src="{{ asset('js/move-top.js') }}"></script>
 	<script type="text/javascript" src="{{ asset('js/easing.js') }}"></script>
->>>>>>> 3842fe13c47c026d8bcc2a13c62e36352a9b69a5
 	<script type="text/javascript">
 			jQuery(document).ready(function($) {
 				$(".scroll").click(function(event){
@@ -358,8 +301,8 @@
 				});
 			});
 	</script>
-	<!-- //end-smooth-scrolling -->
-	<!-- smooth-scrolling-of-move-up -->
+	// end-smooth-scrolling
+	// smooth-scrolling-of-move-up
 	<script type="text/javascript">
 		$(document).ready(function() {
 			/*
@@ -375,22 +318,12 @@
 
 		});
 	</script>
-<<<<<<< HEAD
-	<!-- //smooth-scrolling-of-move-up -->
-	<!-- Bootstrap core JavaScript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-	<script src="js/bootstrap.js"></script>
-
-
-=======
-	<!-- smooth-scrolling-of-move-up -->
-	<!-- Bootstrap core JavaScript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
+	// smooth-scrolling-of-move-up
+	// Bootstrap core JavaScript
+    // ==================================================
+    // Placed at the end of the document so the pages load faster
 	<script src="{{ asset('js/bootstrap.js') }}"></script>
 
 
->>>>>>> 3842fe13c47c026d8bcc2a13c62e36352a9b69a5
 </body>
 </html>
