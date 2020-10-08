@@ -16,29 +16,33 @@
     <!-- Site Icons -->
     <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
     <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
-	<link href="asset/css/bootstrap.css" type="text/css" rel="stylesheet" media="all">
-	<link href="asset/css/style.css" type="text/css" rel="stylesheet" media="all">
+	<link href="{{ asset('asset/css/bootstrap.css') }}" type="text/css" rel="stylesheet" media="all">
+	<link href="{{ asset('asset/css/style.css') }}" type="text/css" rel="stylesheet" media="all">
 
-	<link href="asset/css/font-awesome.css" rel="stylesheet">   <!-- font-awesome icons -->
-	<link rel="stylesheet" href="css/swipebox.css">
+	<link href="{{ asset('asset/css/font-awesome.css') }}" rel="stylesheet">   <!-- font-awesome icons -->
+	<link rel="stylesheet" href="{{ asset('css/swipebox.css') }}">
 
 	<link href="//fonts.googleapis.com/css?family=Cookie" rel="stylesheet">
 	<link href="//fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700" rel="stylesheet">
 	<!-- //Custom Theme files -->
 
-	<link rel="stylesheet" type="text/css" href="styles/main_styles.css">
-	<link rel="stylesheet" type="text/css" href="styles/responsive.css">
+	<link rel="stylesheet" type="text/css" href="{{ asset('styles/main_styles.css') }}">
+	<link rel="stylesheet" type="text/css" href="{{ asset('styles/responsive.css') }}">
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}">
     <!-- Pogo Slider CSS -->
-    <link rel="stylesheet" href="css/pogo-slider.min.css">
+    <link rel="stylesheet" href="{{ asset('css/pogo-slider.min.css') }}">
 	<!-- Site CSS -->
+<<<<<<< HEAD
     <link rel="stylesheet" href="css/style.css">
+=======
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+>>>>>>> 3842fe13c47c026d8bcc2a13c62e36352a9b69a5
     <!-- Responsive CSS -->
-    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="{{ asset('css/responsive.css') }}">
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="css/custom.css">
+    <link rel="stylesheet" href="{{ asset('css/custom.css') }}">
 
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
@@ -66,12 +70,18 @@
     <!-- END LOADER -->
 
 		<div class="banner_content text-center">
+<<<<<<< HEAD
 			<img class="head1" src="images/shap1.jpg" alt="">
 				<h1>yo</h1>
 					<img class="head" src="images/shap2.jpg" alt="">
+=======
+			<img class="head" src="{{ asset('images/unnamed.png') }}" alt="">
+			<h1>{{$event->name}}</h1>
+>>>>>>> 3842fe13c47c026d8bcc2a13c62e36352a9b69a5
 		</div>
 
 	<!-- Start Banner -->
+<<<<<<< HEAD
 	<div class="ulockd-home-slider">
 		<div class="container-fluid">
 			<div class="row">
@@ -110,25 +120,29 @@
 				</div><!-- .pogoSlider -->
 			</div>
 		</div>
+=======
+	<div class="dp">
+		<img class="banner" src="{{ $event->urls}}" alt="">
+>>>>>>> 3842fe13c47c026d8bcc2a13c62e36352a9b69a5
 	</div>
 	<!-- End Banner -->
-<!-- End slider -->
 
-	<!-- Start Gallery -->
+	<!-- portfolio -->
 	<div id="portfolio" class="services portfolio">
 		<div class="container">
 			<div class="col-lg-12">
 				<div class="title-box">
-					<h2> <span>Gallery</span></h2>
+					<h2><span>Gallery</span></h2>
 				</div>
 			</div>
 			<div class="gallery_gds">
 				<ul class="simplefilter">
-					<li class="active" data-filter="all">All</li>
-					<li data-filter="1">Pictures</li>
-					<li data-filter="2">Videos</li>
+					<li class="active" data-filter="all">ALL</li>
+					<li data-filter="1">VIDEOS</li>
+					<li data-filter="2">PICTURES</li>
 				</ul>
 				<div class="filtr-container">
+<<<<<<< HEAD
 					<div class="col-md-4 col-sm-4 col-xs-6 filtr-item" data-category="1" data-sort="Busy streets">
 						<div class="agileits-img">
 							<a href="images/g1.jpg" download title="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis maximus tortor diam, ac lobortis justo rutrum quis. Praesent non purus fermentum, eleifend velit non">
@@ -190,35 +204,66 @@
 						</div>
 					</div>
 					<div class="col-md-4 col-sm-4 col-xs-6 filtr-item" data-category="1" data-sort="Peaceful lake">
+=======
+
+					@foreach ($event->media as $media)
+					<div class="col-md-4 col-sm-4 col-xs-6 filtr-item" data-category="2" data-sort="Busy streets">
+>>>>>>> 3842fe13c47c026d8bcc2a13c62e36352a9b69a5
 						<div class="agileits-img">
-							<a href="images/g7.jpg" download title="Eleifend velit non duis maximus tortor diam, ac lobortis justo rutrum quis, praesent non purus fermentum. ">
-								<img src="images/g7.jpg" alt="" />
+							<a href="{{ $media->urls }}" download >
+								<img src="{{ $media->urls }}" alt=""  />
 								<div class="wthree-pcatn">
+<<<<<<< HEAD
 								<h4>download</h4>
 								</div>
 							</a>
+=======
+									<h4>Download</h4>
+								</div>
+							</a>
+>>>>>>> 3842fe13c47c026d8bcc2a13c62e36352a9b69a5
 						</div>
 					</div>
-					<div class="col-md-4 col-sm-4 col-xs-6 filtr-item" data-category="2" data-sort="Peaceful lake">
+					@endforeach
+
+					@foreach ($event->media as $media)
+					<div class="col-md-4 col-sm-4 col-xs-6 filtr-item" data-category="2" data-sort="Busy streets">
 						<div class="agileits-img">
-							<a href="images/g3.jpg" download title="Praesent non purus fermentum, eleifend velit non, Duis maximus tortor diam, ac lobortis justo rutrum quis.">
-								<img src="images/g3.jpg" alt=""  />
+							<a href="{{ $media->type }}" download title="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis maximus tortor diam, ac lobortis justo rutrum quis. Praesent non purus fermentum, eleifend velit non">
+								<img src="{{ $media->type }}" alt=""  />
 								<div class="wthree-pcatn">
+<<<<<<< HEAD
                                 <h4>download</h4>
 								</div>
 							</a>
+=======
+									<h4>Our Portfolio</h4>
+								</div>
+							</a>
+>>>>>>> 3842fe13c47c026d8bcc2a13c62e36352a9b69a5
 						</div>
 					</div>
-					<div class="col-md-4 col-sm-4 col-xs-6 filtr-item" data-category="3" data-sort="Peaceful lake">
+					@endforeach
+
+				   <div class="clearfix"> </div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- //portfolio -->
+
+					{{-- @foreach ($event->media as $media)
+					<div class="col-md-4 col-sm-4 col-xs-6 filtr-item" data-category="{{ $media->type }}" data-sort="Peaceful lake">
 						<div class="agileits-img">
-							<a href="images/g1.jpg" download title="Ac lobortis justo rutrum quis. Praesent non purus fermentum, duis maximus tortor diam, eleifend velit non">
-								<img src="images/g1.jpg" alt="" class="img-responsive"/>
+							<a href="{{ $media->urls }}" download title="Ac lobortis justo rutrum quis. Praesent non purus fermentum, duis maximus tortor diam, eleifend velit non">
+								<img src="{{ $media->urls }}" alt="" class="img-responsive"/>
 								<div class="wthree-pcatn">
 								<h4>download</h4>
 								</div>
 							</a>
 						</div>
 					</div>
+					@endforeach --}}
 				   <div class="clearfix"> </div>
 				</div>
 			</div>
@@ -229,10 +274,11 @@
 	@include('includes.footer')
 
 	<!-- ALL JS FILES -->
-	<script src="js/jquery.min.js"></script>
-	<script src="js/popper.min.js"></script>
-	<script src="js/bootstrap.min.js"></script>
+	<script src="{{ asset('js/jquery.min.js') }}"></script>
+	<script src="{{ asset('js/popper.min.js') }}"></script>
+	<script src="{{ asset('js/bootstrap.min.js') }}"></script>
     <!-- ALL PLUGINS -->
+<<<<<<< HEAD
 	<script src="js/jquery.magnific-popup.min.js"></script>
     <script src="js/jquery.pogo-slider.min.js"></script>
 	<script src="js/slider-index.js"></script>
@@ -243,11 +289,38 @@
 
 	<!-- js -->
 	<script src="js/jquery-2.2.3.min.js"></script>
+=======
+	<script src="{{ asset('js/jquery.magnific-popup.min.js') }}"></script>
+	<script src="{{ asset('js/slider-index.js') }}"></script>
+	<script src="{{ asset('js/smoothscroll.js') }}"></script>
+	<script src="{{ asset('js/form-validator.min.js') }}"></script>
+    <script src="{{ asset('js/contact-form-script.js') }}"></script>
+	<script src="{{ asset('js/custom.js') }}"></script>
+
+	<!-- js -->
+	<script src="{{ asset('js/jquery-2.2.3.min.js') }}"></script>
+>>>>>>> 3842fe13c47c026d8bcc2a13c62e36352a9b69a5
 	<!-- //js -->
 
+	<script>
+		$(document).ready(function () {
+			let media = {!! json_encode($event->media ?? array()) !!}
+			let preloaded = media.map( media => {
+				return {
+					id : media.id,
+					src : media.urls
+				}
+			});
+	</script>
+
 	<!-- Kick off Filterizr -->
+<<<<<<< HEAD
 	<script src="js/jquery.filterizr.js"></script>
 	<script src="js/controls.js"></script>
+=======
+	<script src="{{ asset('js/jquery.filterizr.js') }}"></script>
+	<script src="{{ asset('js/controls.js') }}"></script>
+>>>>>>> 3842fe13c47c026d8bcc2a13c62e36352a9b69a5
 	<script type="text/javascript">
 		$(function() {
 			//Initialize filterizr with default options
@@ -255,7 +328,11 @@
 		});
 	</script>
 	<!-- swipe box js -->
+<<<<<<< HEAD
 	<script src="js/jquery.swipebox.min.js"></script>
+=======
+	<script src="{{ asset('js/jquery.swipebox.min.js') }}"></script>
+>>>>>>> 3842fe13c47c026d8bcc2a13c62e36352a9b69a5
 	<script type="text/javascript">
 			jQuery(function($) {
 				$(".swipebox").swipebox();
@@ -263,9 +340,15 @@
 	</script>
 	<!-- //swipe box js -->
 	<!-- start-smooth-scrolling -->
+<<<<<<< HEAD
 	<script src="js/SmoothScroll.min.js"></script>
 	<script type="text/javascript" src="js/move-top.js"></script>
 	<script type="text/javascript" src="js/easing.js"></script>
+=======
+	<script src="{{ asset('js/SmoothScroll.min.js') }}"></script>
+	<script type="text/javascript" src="{{ asset('js/move-top.js') }}"></script>
+	<script type="text/javascript" src="{{ asset('js/easing.js') }}"></script>
+>>>>>>> 3842fe13c47c026d8bcc2a13c62e36352a9b69a5
 	<script type="text/javascript">
 			jQuery(document).ready(function($) {
 				$(".scroll").click(function(event){
@@ -292,6 +375,7 @@
 
 		});
 	</script>
+<<<<<<< HEAD
 	<!-- //smooth-scrolling-of-move-up -->
 	<!-- Bootstrap core JavaScript
     ================================================== -->
@@ -299,5 +383,14 @@
 	<script src="js/bootstrap.js"></script>
 
 
+=======
+	<!-- smooth-scrolling-of-move-up -->
+	<!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+	<script src="{{ asset('js/bootstrap.js') }}"></script>
+
+
+>>>>>>> 3842fe13c47c026d8bcc2a13c62e36352a9b69a5
 </body>
 </html>

@@ -27,7 +27,9 @@
     <!-- Responsive CSS -->
     <link rel="stylesheet" href="css/responsive.css">
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="css/custom.css">
+	<link rel="stylesheet" href="css/custom.css">
+	
+	<link rel="stylesheet" href="https://fontawesome.com/how-to-use/on-the-web/advanced/css-pseudo-elements">
 
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
@@ -39,12 +41,6 @@
 
 	<link rel="stylesheet" type="text/css" href="styles/main_styles.css">
 	<link rel="stylesheet" type="text/css" href="styles/responsive.css">
-
-
-
-
-
-
 
 </head>
 <body id="home" data-spy="scroll" data-target="#navbar-wd" data-offset="98">
@@ -62,9 +58,6 @@
 				</div>
 			</div>
 		</div>
-
-
-
     </div><!-- end loader -->
     <!-- END LOADER -->
 	
@@ -81,7 +74,6 @@
 								<h1>Flavour Events</h1>
 								
 								<p><strong>Let us be the one to make your day special</strong></p>
-								<a href="" class="btn ">Contact</a>
 							</div>
 						</div>
 					</div>
@@ -91,7 +83,6 @@
 							<h1>Flavour Events</h1>
 								
 								<p><strong>We make things happen</strong></p>
-								<a href="#" class="btn ">Contact</a>
 							</div>
 						</div>
 					</div>
@@ -101,7 +92,6 @@
 							<h1>Flavour Events</h1>
 								
 								<p><strong>Let us be the one to make your day special</strong></p>
-								<a href="#" class="btn">Contact</a>
 							</div>
 						</div>
 						
@@ -111,10 +101,6 @@
 		</div>
 	</div>
 	<!-- End Banner -->
-
-
-
-
 
 	<!-- Start About us -->
 	<div id="about" class="about-box">
@@ -138,25 +124,18 @@
 							<div class="col-lg-4 col-md-6 col-sm-12">
 								<div class="about-img">
 								
-							
-						
 								<div class="video-wrap">
 								<a href="http://example.com/">
-								<div class="play-btn"></div>
-									
-								
+								<div class="play-btn "></div>
 								<img class="img-fluid rounded" src="images/about-img-01.jpg">
 								
-						</a>
-								</div>
-							
-							</div>
+							</a>
 						</div>
-						<div class="row align-items-center about-main-info">
-							<div class="col-lg-4 col-md-6 col-sm-12">
-								
-							</div>
-							
+					</div>
+				</div>
+			<div class="row align-items-center about-main-info">
+				<div class="col-lg-4 col-md-6 col-sm-12">
+								</div>
 							</div>
 						</div>
 					</div>

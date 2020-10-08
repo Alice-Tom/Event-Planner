@@ -2,7 +2,7 @@
 <header class="top-header">
     <nav class="navbar header-nav navbar-expand-lg">
         <div class="container">
-            <a class="navbar-brand" href="index.html">	<h2 style="color: #FF5722;">The Event Planner</h2></a>
+            <a class="navbar-brand" href="index.html">	<h2 style="color: #dd666c;">The Event Planner</h2></a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-wd" aria-controls="navbar-wd" aria-expanded="false" aria-label="Toggle navigation">
                 <span></span>
                 <span></span>
@@ -16,7 +16,7 @@
                 
                     <li><a class="nav-link" href="#gallery">Gallery</a></li>
                     <li><a class="nav-link" href="#events">Events</a></li>
-                    <li><a class="nav-link" href="login">LOGIN</a></li>
+                    <li><a class="nav-link" href="client_login">LOGIN</a></li>
                   
                     
                 </ul>
