@@ -64,7 +64,7 @@
 					<div class="display-upload" style="padding-top: .5rem;"></div>
 				</div>
 			</div>
-		</div>ff
+		</div>
 <br>
 	{{-- row 5 --}}
 	<div class="form-row-total">

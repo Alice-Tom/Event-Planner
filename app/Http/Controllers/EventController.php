@@ -27,7 +27,8 @@ class EventController extends Controller
      */
     public function adminIndex()
     {
-        return view('admin.dashboard');
+        $events = Event::all();
+        return view('admin.dashboard', compact('events'));
     }
 
     /**
@@ -71,29 +72,29 @@ class EventController extends Controller
                 'expiry_date' => $request->expiry_date,
                 'isCompleted' => isset($request->isCompleted) ? $request->isCompleted : false
             ]);
-            
-    
+
+
             foreach ($clients as $client) {
                 $event->clients()->create([
                     'name' => $client
                 ]);
             }
-    
+
             foreach ($urls as $url) {
                 $type = 'video';
                 $image_extensions = ['jpg', 'jpeg', 'png', 'gif'];
-                
+
                 if (in_array($url->extension(), $image_extensions)) {
                    $type = 'photo';
                 }
                 $event->media()->create([
-                    'type'=> $type, 
+                    'type'=> $type,
                     'url' => $url->store('public/events_images'),
-                    'actual_name' => $url->getClientOriginalName() 
+                    'actual_name' => $url->getClientOriginalName()
                 ]);
             }
 
-        
+
         } catch (\Throwable $th) {
             throw $th;
         }
@@ -143,11 +144,19 @@ class EventController extends Controller
      */
     public function update(Request $request, Event $event)
     {
+        dd($request);
         $clients = $request->clients;
 
-        $urls = $request->file('media') ?? [];
+        $media = $request->file('media') ?? [];
 
-        $document = $request->file('document')[0] ?? [];
+
+        $old_media = $request->file('old_media') ?? [];
+
+        $display_photo = $request->file('display_photo')[0] ?? [];
+
+        $urls = array_diff($old_media, $media);
+
+        return $urls;
 
         try {
             $event->update([
@@ -156,7 +165,7 @@ class EventController extends Controller
                 'password' => Hash::make($request->password),
                 'type' => $request->type,
                 'description' => $request->description,
-                // 'display_photo' => $document->store('public/events_images'),
+                // 'display_photo' => $display_photo->store('public/events_images'),
                 'date' => $request->date,
                 'expiry_date' => $request->expiry_date,
                 'isCompleted' => isset($request->isCompleted) ? true : false
@@ -164,9 +173,9 @@ class EventController extends Controller
 
             // delete old clients
            $existingclients = Client::select('name')->where('event_id', $event->id)->get();
-           return $existingclients->all();
+           return $existingclients->toArray();
            $clientdifference = array_diff($existingclients, $clients);
-           
+
            foreach ($clientdifference as $singleclient){
              $uselessclient = Client::where('name', $singleclient)
                     ->where('event_id', $event->id)
@@ -181,20 +190,20 @@ class EventController extends Controller
                     'name' => $client
                 ]);
             }
-    
+
 
             foreach ($urls as $url) {
                 $type = 'video';
                 $image_extensions = ['jpg', 'jpeg', 'png', 'gif'];
-                
+
                 if (in_array($url->extension(), $image_extensions)) {
                    $type = 'photo';
                 }
-    
+
                 $event->media()->updateOrCreate(
                     [
-                        'type'=> $type, 
-                        'actual_name' => $url->getClientOriginalName() 
+                        'type'=> $type,
+                        'actual_name' => $url->getClientOriginalName()
                     ],
                     [
                         'url' => $url->store('public/events_images'),
@@ -204,7 +213,7 @@ class EventController extends Controller
         } catch (\Throwable $th) {
             throw $th;
         }
-        
+
         return back()->with('Post Update', 'Successfully');
 
     }

@@ -5,10 +5,10 @@
 <div class="page-content">
 	<div class="form-v9-content" style="background-image: url({{asset('css/images/bg1.jpg')}})">
 		<h2>Register Event</h2>
-        <form 
-            class="form-detail" 
+        <form
+            class="form-detail"
             method="post"
-            action="{{ route('event.update', $event->id) }}" 
+            action="{{ route('event.update', $event->id) }}"
             enctype="multipart/form-data"
         >
             @csrf
@@ -19,7 +19,7 @@
 <script>
     $(document).ready(function () {
         let media = {!! json_encode($event->media ?? array()) !!}
-        let display_photo = {!! json_encode($event ?? array()) !!}
+        let display_photo = {!! json_encode($event ?? '') !!}
 
         let preloaded_media = media.map( media => {
 			return {
@@ -37,14 +37,16 @@
             extensions: ['.jpg','.jpeg','.png', '.mp4'],
             mimes: ['image/jpeg','image/png', 'video/mp4', ''],
             imagesInputName: 'media',
-			preloaded: preloaded_media
+			preloaded: preloaded_media,
+            preloadedInputName: 'old_media'
         });
-		
+
 		$('.display-upload').imageUploader({
 			extensions: ['.jpg','.jpeg','.png', '.mp4'],
 			mimes: ['image/jpeg','image/png', 'video/mp4', ''],
             imagesInputName: 'display_photo',
 			preloaded: preloaded_display_photo,
+            preloadedInputName: 'old_display_photo',
             maxFiles: 1,
 		});
     });
