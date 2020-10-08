@@ -39,10 +39,13 @@ return [
         'web' => [
             'driver' => 'session',
             'provider' => 'users',
+            'events' => 'users',
+
         ],
 
         'api' => [
             'driver' => 'token',
+            'events' => 'token',
             'provider' => 'users',
             'hash' => false,
         ],

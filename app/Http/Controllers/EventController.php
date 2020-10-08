@@ -100,7 +100,11 @@ class EventController extends Controller
 
 
         return back()->with('post_created','succesfully');
+
+        
     }
+
+
 
     /**
      * Display the specified resource.
@@ -215,4 +219,6 @@ class EventController extends Controller
     {
         //
     }
+
+    
 }

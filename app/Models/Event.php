@@ -6,6 +6,7 @@ use App\Models\Client;
 use App\Models\Media;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Foundation\Auth\Event as Authenticatable;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 
@@ -30,5 +31,17 @@ class Event extends Model
     public function getUrlsAttribute()
     {
         return Storage::url($this->display_photo);
+    }
+
+    public function login($credentials)
+    {
+    
+        Auth::guard('events') 
+            -> attempt($credentials) 
+            {
+                return redirect()->route('event.ShowEvent');
+            }
+
+        
     }
 }
