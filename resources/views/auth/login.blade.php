@@ -15,7 +15,7 @@
         <script src="{{ asset('js/app.js') }}" defer></script>
     
         <!-- Fonts -->
-        <link rel="dns-prefetch" href="//fonts.gstatic.com">
+        <link rel="dns-prefetch" href="{{ asset('//fonts.gstatic.com')}}">
         <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
     
         <!-- Styles -->
@@ -33,21 +33,13 @@
             <div class="wrapper">
                 <div class="inner">
                     <div class="image-holder">
-                        <img src="images/registration-form-4.jpg" alt="">
+                        <img src="{{ asset('images/registration-form-4.jpg')}}" alt="">
                     </div>
-                    <form method="POST" action="{{ route('login') }}">
+                    <form method="POST">
                         @csrf
                         <h3>Login</h3>
                         
-                       {{-- email --}}
-                       <div class="form-holder active">
-                        <input id="email" type="email"  placeholder="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
-                        @error('email')
-                            <span class="invalid-feedback" role="alert">
-                                <strong>{{ $message }}</strong>
-                            </span>
-                        @enderror
-                    </div> 
+                      
                         
                         {{-- password --}}
                         <div class="form-holder">

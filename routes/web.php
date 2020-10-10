@@ -13,13 +13,18 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', 'IndexController@index');
+Route::get('/', 'IndexController@index')->name('home');
 
+// EventLoginController=>authenticate the user
 Route::prefix('event')->group(function () {
-    Route::get('/', 'EventController@index');
+    Route::get('/{event:token}', 'EventController@index');
+    Route::post('/{event:token}', 'EventLoginController');
+
+    // Route::get('/', 'EventController@index');
    
 });
-Route::get('/event/{event}', 'EventController@showEvent')->name('event.showEvent');
+
+Route::get('/event/show/{event}', 'EventController@showEvent')->name('event.showEvent');
 
 
 
@@ -31,6 +36,7 @@ Route::prefix('admin/event')->group(function () {
     Route::get('/show/{event}', 'EventController@show')->name('event.show');
     Route::post('/show/{event}', 'EventController@update')->name('event.update');
 });
+
 
 Route::get('/upload', 'UploadEventController@index');
 

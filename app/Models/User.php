@@ -11,13 +11,17 @@ class User extends Authenticatable
 {
     use HasFactory, Notifiable;
 
+    public function event()
+    {
+        return $this->hasOne(Event::class);
+    }
     /**
      * The attributes that are mass assignable.
      *
      * @var array
      */
     protected $fillable = [
-        'name',
+        'token',
         'password',
     ];
 

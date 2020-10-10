@@ -39,13 +39,17 @@ return [
         'web' => [
             'driver' => 'session',
             'provider' => 'users',
-            'events' => 'users',
+
+        ],
+
+        'event' => [
+            'driver' => 'session',
+            'provider' => 'events',
 
         ],
 
         'api' => [
             'driver' => 'token',
-            'events' => 'token',
             'provider' => 'users',
             'hash' => false,
         ],
@@ -74,6 +78,11 @@ return [
             'model' => App\Models\User::class,
         ],
 
+        'events' => [
+            'driver' => 'eloquent',
+            'model' => App\Models\Event::class,
+        ],
+
         // 'users' => [
         //     'driver' => 'database',
         //     'table' => 'users',
@@ -98,6 +107,13 @@ return [
     'passwords' => [
         'users' => [
             'provider' => 'users',
+            'table' => 'password_resets',
+            'expire' => 60,
+            'throttle' => 60,
+        ],
+
+        'events' => [
+            'provider' => 'events',
             'table' => 'password_resets',
             'expire' => 60,
             'throttle' => 60,

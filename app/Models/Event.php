@@ -6,13 +6,14 @@ use App\Models\Client;
 use App\Models\Media;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Foundation\Auth\Event as Authenticatable;
+use Illuminate\Notifications\Notifiable;
+use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 
-class Event extends Model
+class Event extends Authenticatable
 {
-    use HasFactory;
+    use HasFactory, Notifiable;
     
     protected $guarded = [];
 
@@ -28,20 +29,22 @@ class Event extends Model
         return $this->hasMany(Media::class);
     }
 
+    public function event()
+        {
+             return $this->belongsTo(User::class);
+        }
+
     public function getUrlsAttribute()
     {
         return Storage::url($this->display_photo);
     }
 
-    public function login($credentials)
+    public function username()
     {
-    
-        Auth::guard('events') 
-            -> attempt($credentials) 
-            {
-                return redirect()->route('event.ShowEvent');
-            }
-
-        
+        return 'token';
     }
+
+
+   
+
 }
