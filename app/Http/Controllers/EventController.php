@@ -7,17 +7,36 @@ use App\Models\Event;
 use App\Models\Media;
 use App\Models\Client;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Str;
 
 class EventController extends Controller
 {
+
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    // check is the user is authenticated
+    public function index(Event $event)
     {
-        return view('client.event');
+         // only the authorised user
+        if (Auth::guard('event')->check()) 
+        {
+            if (!($event->id == Auth::guard('event')->user()->id)) {
+                abort(401);
+            }
+            return view('client.event', compact('event'));
+        }
+        return view('auth.login');
+    }
+
+    public function logout()
+    {
+        Auth::logout();
+
+        return redirect()->route('home');
     }
 
     /**
@@ -66,7 +85,7 @@ class EventController extends Controller
                 'password' => Hash::make($request->password),
                 'type' => $request->type,
                 'description' => $request->description,
-                'token' => $request->description,
+                'token' => Str::uuid(),
                 'display_photo' => $request->file('display_photo')[0]->store('public/events_images'),
                 'date' => $request->date,
                 'expiry_date' => $request->expiry_date,
@@ -101,7 +120,11 @@ class EventController extends Controller
 
 
         return back()->with('post_created','succesfully');
+
+        
     }
+
+
 
     /**
      * Display the specified resource.
@@ -140,7 +163,6 @@ class EventController extends Controller
      */
     public function update(Request $request, Event $event)
     {
-        dd($request);
         $clients = $request->clients;
 
         $media = $request->file('media') ?? [];
@@ -152,60 +174,54 @@ class EventController extends Controller
 
         $urls = array_diff($old_media, $media);
 
-        return $urls;
-
         try {
-            $event->update([
+            $updated_events = [
                 'name' => ucwords($request->name),
                 'slug' => $request->name,
-                'password' => Hash::make($request->password),
                 'type' => $request->type,
                 'description' => $request->description,
                 // 'display_photo' => $display_photo->store('public/events_images'),
                 'date' => $request->date,
                 'expiry_date' => $request->expiry_date,
                 'isCompleted' => isset($request->isCompleted) ? true : false
-            ]);
+            ];
 
-            // delete old clients
-           $existingclients = Client::select('name')->where('event_id', $event->id)->get();
-           return $existingclients->toArray();
-           $clientdifference = array_diff($existingclients, $clients);
+            if ($request->password) {
+                $updated_events['password'] = Hash::make($request->password);
+            }
 
-           foreach ($clientdifference as $singleclient){
-             $uselessclient = Client::where('name', $singleclient)
-                    ->where('event_id', $event->id)
-                    ->get();
+            $event->update($updated_events);
 
-            $uselessclient->delete();
-           }
-
-        //    update the clients
+            Client::destroy($request->client_id);
+            
+            //    update the clients
             foreach ($clients as $client) {
-                $event->clients()->updateOrCreate([
-                    'name' => $client
+
+                $event->clients()->create([
+                    'name' => ucwords($client),
                 ]);
             }
 
+            
 
-            foreach ($urls as $url) {
-                $type = 'video';
-                $image_extensions = ['jpg', 'jpeg', 'png', 'gif'];
+            // foreach ($urls as $url) {
+            //     $type = 'video';
+            //     $image_extensions = ['jpg', 'jpeg', 'png', 'gif'];
 
-                if (in_array($url->extension(), $image_extensions)) {
-                   $type = 'photo';
-                }
+            //     if (in_array($url->extension(), $image_extensions)) {
+            //        $type = 'photo';
+            //     }
 
-                $event->media()->updateOrCreate(
-                    [
-                        'type'=> $type,
-                        'actual_name' => $url->getClientOriginalName()
-                    ],
-                    [
-                        'url' => $url->store('public/events_images'),
-                    ]
-            );
-            }
+            //     $event->media()->updateOrCreate(
+            //         [
+            //             'type'=> $type,
+            //             'actual_name' => $url->getClientOriginalName()
+            //         ],
+            //         [
+            //             'url' => $url->store('public/events_images'),
+            //         ]
+            // );
+            // }
         } catch (\Throwable $th) {
             throw $th;
         }
@@ -224,4 +240,30 @@ class EventController extends Controller
     {
         //
     }
-}
+
+    // public function Retrieve(Event $event)
+    // {
+    //    $event = Event::where('token', $event)->get();
+    //    return view('login', compact('event'));
+    
+    //    $credentials = $event->only('token', 'password');
+        
+    //    return $user->login($credentials);
+    // }
+
+    //  public function login($credentials)   
+    //  {
+    //      if (Auth::guard('events')->attempt($credentials)) 
+    //     {
+    //         return redirect()->route('event.ShowEvent');
+    //     } 
+       
+    //        else
+    //        {
+    //            return "Login not successfull";
+    //        }
+    //  }
+       
+} 
+  
+

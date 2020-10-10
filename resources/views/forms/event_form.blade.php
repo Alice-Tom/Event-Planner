@@ -19,6 +19,14 @@
 		</div>
 	</div>
 
+	{{-- clients	 --}}
+	@if (isset($event))
+		@foreach ($event->clients as $client)
+			<input type="hidden" name="client_id[]" value="{{ $client->id }}">
+		@endforeach
+	@endif
+
+
 	{{-- row 2 --}}
 	<div class="form-row-total">
 		<div class="form-row">
@@ -45,7 +53,7 @@
 		<div class="form-row">
 		{{-- password --}}
 			<label>Password</label>
-				<input type="password" name="password" id="password" class="input-text"  value="{{$event->password ?? ''}}"required>
+				<input type="password" name="password" id="password" class="input-text"  {{isset($event) ? '' : 'required' }}>
 					<i class="far fa-eye" id="togglePassword"></i>
 		</div>
 	</div>
@@ -70,7 +78,7 @@
 	<div class="form-row-total">
 		<div class="form-row">
 	{{-- checkbox	 --}}
-		<label class="check-label">Event Completed<input type="checkbox" class="input-checkbox" name="isCompleted" id="isCompleted" {{isset($event) ? ($event->isCompleted ? 'checked' : '') : '' }}></label>
+		<label class="check-label">Event Completed<input type="checkbox" class="input-checkbox" value=1 name="isCompleted" id="isCompleted" {{isset($event) ? ($event->isCompleted ? 'checked' : '') : '' }}></label>
 			</div>
 		</div>
 <br>

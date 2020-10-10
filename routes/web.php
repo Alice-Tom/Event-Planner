@@ -14,13 +14,17 @@ use Illuminate\Support\Facades\Auth;
 |
 */
 
-Route::get('/', 'IndexController@index');
+Route::get('/', 'IndexController@index')->name('home');
 
 Route::prefix('event')->group(function () {
-    Route::get('/', 'EventController@index');
+    Route::get('/{event:token}', 'EventController@index');
+    Route::post('/{event:token}', 'EventLoginController');
+
+    // Route::get('/', 'EventController@index');
 
 });
-Route::get('/event/{event}', 'EventController@showEvent')->name('event.showEvent');
+
+Route::get('/event/show/{event}', 'EventController@showEvent')->name('event.showEvent');
 
 
 

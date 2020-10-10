@@ -9,7 +9,7 @@
         <meta name="csrf-token" content="{{ csrf_token() }}">
 
 		<!-- STYLE CSS -->
-		<link rel="stylesheet" href="css/events.css">
+		<link rel="stylesheet" href="{{ asset('css/events.css')}}">
 		
 	
 	</head>
@@ -19,7 +19,7 @@
         @yield('content')
 
         
-		<script src="js/jquery-3.3.1.min.js"></script>
-		<script src="js/main.js"></script>
+		<script src="{{asset('js/jquery-3.3.1.min.js')}}"></script>
+		<script src="{{asset('js/main.js')}}"></script>
 	</body>
 </html>
