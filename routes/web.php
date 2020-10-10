@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Auth;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,7 +18,7 @@ Route::get('/', 'IndexController@index');
 
 Route::prefix('event')->group(function () {
     Route::get('/', 'EventController@index');
-   
+
 });
 Route::get('/event/{event}', 'EventController@showEvent')->name('event.showEvent');
 
@@ -32,12 +33,7 @@ Route::prefix('admin/event')->group(function () {
     Route::post('/show/{event}', 'EventController@update')->name('event.update');
 });
 
-Route::get('/upload', 'UploadEventController@index');
-
 Route::get('/dashboard', 'DashboardController@index');
-
-Route::get('/viewevents', 'UploadEventController@create');
 
 Auth::routes();
 
-// Route::get('/event', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
