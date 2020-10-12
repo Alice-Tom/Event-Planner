@@ -75,31 +75,24 @@
 		<div class="container-fluid">
 			<div class="row">
 				<div class="pogoSlider" id="js-main-slider">
-					<div class="pogoSlider-slide" data-transition="zipReveal" data-duration="1500" style="background-image:url({{ asset('images/slider-01.jpg') }});">
-						<div class="lbox-caption">
-							<div class="lbox-details">
-								<p><strong>Let us be the one to make your day special</strong></p>
-								<a href="" class="btn ">Contact</a>
-							</div>
-						</div>
-					</div>
-					<div class="pogoSlider-slide" data-transition="blocksReveal" data-duration="1500" style="background-image:url({{ asset('images/slider-02.jpg') }});">
-						<div class="lbox-caption">
-							<div class="lbox-details">
-								<p><strong>We make things happen</strong></p>
-								<a href="#" class="btn ">Contact</a>
-							</div>
-						</div>
-					</div>
-					<div class="pogoSlider-slide" data-transition="shrinkReveal" data-duration="2000" style="background-image:url({{ asset('images/slider-03.jpg') }});">
-						<div class="lbox-caption">
-							<div class="lbox-details">
-								<p><strong>Let us be the one to make your day special</strong></p>
-								<a href="#" class="btn">Contact</a>
-							</div>
-						</div>
-
-					</div>
+                    @foreach ($event->getMedia('dp-'.$event->token) as $event_images)
+                        <div class="pogoSlider-slide" data-transition="zipReveal" data-duration="1500" style="background-image:url({{ $event_images->getUrl() }});">
+                            <div class="lbox-caption">
+                                <div class="lbox-details">
+                                    <p><strong>Let us be the one to make your day special</strong></p>
+                                    <a href="" class="btn ">Contact</a>
+                                </div>
+                            </div>
+                        </div>
+                        @endforeach
+                        <div class="pogoSlider-slide" data-transition="zipReveal" data-duration="1500" style="background-image:url({{ $event_images->getUrl() }});">
+                            <div class="lbox-caption">
+                                <div class="lbox-details">
+                                    <p><strong>Let us be the one to make your day special</strong></p>
+                                    <a href="" class="btn ">Contact</a>
+                                </div>
+                            </div>
+                        </div>
 				</div><!-- .pogoSlider -->
 			</div>
 		</div>
