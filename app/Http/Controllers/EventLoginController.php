@@ -12,8 +12,8 @@ class EventLoginController extends Controller
     protected function guard()
     {
         return Auth::guard('event');
-        
-        
+
+
     }
     /**
      * Handle the incoming request.
@@ -28,7 +28,6 @@ class EventLoginController extends Controller
         if (Auth::guard('event')->attempt($credentials)) {
             return back();
         }
-
-        return 'Failed';
+        return back()->with('login_error', 'Invalid Credentails');
     }
 }

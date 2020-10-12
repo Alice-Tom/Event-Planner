@@ -17,11 +17,10 @@ class CreateEventsTable extends Migration
             $table->id();
             $table->string('name');
             $table->string('slug');
-            $table->string('token');
+            $table->string('token')->unique();
             $table->string('password');
             $table->string('type');
             $table->string('description')->nullable();
-            $table->string('display_photo');
             $table->date('date')->nullable();
             $table->date('expiry_date')->nullable();
             $table->boolean('isCompleted');

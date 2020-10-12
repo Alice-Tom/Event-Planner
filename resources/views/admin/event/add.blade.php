@@ -8,7 +8,7 @@
         <form
             class="form-detail"
             method="post"
-            action="{{ route('event.store') }}"
+            action="{{ route('admin.event.store') }}"
             enctype="multipart/form-data"
         >
             @csrf
@@ -19,14 +19,14 @@
 <script>
     $(document).ready(function () {
         $('.media-upload').imageUploader({
-            extensions: ['.jpg','.jpeg','.png', '.mp4'],
+            extensions: ['.jpg','.jpeg','.png', '.mp4', '.JPG','.JPEG','.PNG', '.MP4'],
             mimes: ['image/jpeg','image/png', 'video/mp4', ''],
             imagesInputName: 'media',
             label: 'Drag and drop pictures here or click to browse'
 		});
 
 		$('.display-upload').imageUploader({
-			extensions: ['.jpg','.jpeg','.png', '.mp4'],
+            extensions: ['.jpg','.jpeg','.png', '.mp4', '.JPG','.JPEG','.PNG', '.MP4'],
 			mimes: ['image/jpeg','image/png', 'video/mp4', ''],
 			imagesInputName: 'display_photo',
 			maxFiles: 1,

@@ -24,7 +24,9 @@
 		@foreach ($event->clients as $client)
 			<input type="hidden" name="client_id[]" value="{{ $client->id }}">
 		@endforeach
-	@endif
+    @endif
+
+    <input type="hidden" name="token" value="{{ Str::uuid() }}">
 
 
 	{{-- row 2 --}}

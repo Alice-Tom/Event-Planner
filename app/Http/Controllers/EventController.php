@@ -22,7 +22,7 @@ class EventController extends Controller
     public function index(Event $event)
     {
          // only the authorised user
-        if (Auth::guard('event')->check()) 
+        if (Auth::guard('event')->check())
         {
             if (!($event->id == Auth::guard('event')->user()->id)) {
                 abort(401);
@@ -118,13 +118,9 @@ class EventController extends Controller
             throw $th;
         }
 
-
         return back()->with('post_created','succesfully');
 
-        
     }
-
-
 
     /**
      * Display the specified resource.
@@ -193,7 +189,7 @@ class EventController extends Controller
             $event->update($updated_events);
 
             Client::destroy($request->client_id);
-            
+
             //    update the clients
             foreach ($clients as $client) {
 
@@ -202,7 +198,7 @@ class EventController extends Controller
                 ]);
             }
 
-            
+
 
             // foreach ($urls as $url) {
             //     $type = 'video';
@@ -241,29 +237,6 @@ class EventController extends Controller
         //
     }
 
-    // public function Retrieve(Event $event)
-    // {
-    //    $event = Event::where('token', $event)->get();
-    //    return view('login', compact('event'));
-    
-    //    $credentials = $event->only('token', 'password');
-        
-    //    return $user->login($credentials);
-    // }
+}
 
-    //  public function login($credentials)   
-    //  {
-    //      if (Auth::guard('events')->attempt($credentials)) 
-    //     {
-    //         return redirect()->route('event.ShowEvent');
-    //     } 
-       
-    //        else
-    //        {
-    //            return "Login not successfull";
-    //        }
-    //  }
-       
-} 
-  
 
