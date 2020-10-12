@@ -113,16 +113,16 @@
 					<li data-filter="1">VIDEOS</li>
 					<li data-filter="2">PICTURES</li>
 					<li> <a href="" id="download_all">DOWNLOAD ALL</a> </li>
-                    <li> <a href="{{ route('client.event.media.download.all.zip', $event->id ) }}" id="download_zip">DOWNLOAD ZIP FILE</a> </li>
+                    <li> <a href="{{ route('client.event.media.download.all.zip', $event->id ) }}" id="download_zip">DOWNLOAD ZIP</a> </li>
 				</ul>
 				<div class="filtr-container">
                     @foreach ($event->getMedia($event->token) as $event_images)
                         <div class="col-md-4 col-sm-4 col-xs-6 filtr-item" data-category="2" data-sort="Luminous night">
                             <div class="agileits-img">
                                 {{ $event_images('image_preview') }}
-                                <div class="wthree-pcatn">
-                                <h4>downlaod</h4>
-                                </div>
+                                <a href="" class="wthree-pcatn" data-media="{{ $event_images->id }}" data-name="{{ $event_images->file_name }}" >
+                                    <h4>downlaod</h4>
+                                </a>
                             </div>
                         </div>
                     @endforeach
@@ -186,6 +186,27 @@
                         document.body.appendChild(link);
                         link.click();
                     })
+                }).catch (error => {
+                    console.log(error)
+                })
+            })
+
+            $('.wthree-pcatn').on('click', function(e) {
+                e.preventDefault()
+
+                let media = $(this).data('media');
+                let file_name = $(this).data('name');
+
+                let url = `/event/media/download-single/${media}`;
+                axios.get(url, {
+                    responseType: "blob",
+                }).then( response => {
+                    const url = window.URL.createObjectURL(new Blob([response.data]));
+                    const link = document.createElement("a");
+                    link.href = url;
+                    link.setAttribute("download", `${file_name}`);
+                    document.body.appendChild(link);
+                    link.click();
                 }).catch (error => {
                     console.log(error)
                 })
