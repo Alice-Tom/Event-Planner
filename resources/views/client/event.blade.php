@@ -126,12 +126,10 @@
                     @foreach ($event->getMedia($event->token) as $event_images)
                         <div class="col-md-4 col-sm-4 col-xs-6 filtr-item" data-category="2" data-sort="Luminous night">
                             <div class="agileits-img">
-                                <a href="images/g2.jpg" downlaod title="Duis maximus tortor diam, ac lobortis justo rutrum quis. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent non purus fermentum, eleifend velit non">
-                                    {{ $event_images('image_preview') }}
-                                    <div class="wthree-pcatn">
-                                    <h4>downlaod</h4>
-                                    </div>
-                                </a>
+                                {{ $event_images('image_preview') }}
+                                <div class="wthree-pcatn">
+                                <h4>downlaod</h4>
+                                </div>
                             </div>
                         </div>
                     @endforeach

@@ -29,35 +29,16 @@
 </div>
 <script>
     $(document).ready(function () {
-        let media = {!! json_encode($event->media ?? array()) !!}
-        let display_photo = {!! json_encode($event ?? '') !!}
-
-        let preloaded_media = media.map( media => {
-			return {
-				id : media.id,
-				src : media.urls
-			}
-		});
-
-        let preloaded_display_photo = [{
-            id : display_photo.id,
-            src : display_photo.urls
-        }]
-
         $('.media-upload').imageUploader({
             extensions: ['.jpg','.jpeg','.png', '.mp4', '.JPG','.JPEG','.PNG', '.MP4'],
             mimes: ['image/jpeg','image/png', 'video/mp4', ''],
             imagesInputName: 'media',
-			preloaded: preloaded_media,
-            preloadedInputName: 'old_media'
         });
 
 		$('.display-upload').imageUploader({
             extensions: ['.jpg','.jpeg','.png', '.mp4', '.JPG','.JPEG','.PNG', '.MP4'],
 			mimes: ['image/jpeg','image/png', 'video/mp4', ''],
             imagesInputName: 'display_photo',
-			preloaded: preloaded_display_photo,
-            preloadedInputName: 'old_display_photo',
             maxFiles: 1,
 		});
 
