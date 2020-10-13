@@ -65,9 +65,8 @@
     <!-- END LOADER -->
 
 		<div class="banner_content text-center">
-			<img class="head1" src="{{ asset('images/shap1.jpg') }}" alt="">
-				<h1>yo</h1>
-            <img class="head" src="{{ asset('images/shap2.jpg') }}" alt="">
+            <img class="head" src="{{ asset('images/unnamed.png') }}" alt="">
+				<h1>{{$event->name}}</h1>
 		</div>
 
 	<!-- Start Banner -->

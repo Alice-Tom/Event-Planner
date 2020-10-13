@@ -234,7 +234,7 @@ class EventController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Client::destroy($request->client_id);
     }
 
 }

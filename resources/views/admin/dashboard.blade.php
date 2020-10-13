@@ -168,7 +168,6 @@
             <th scope="col">Name</th>
             <th scope="col">People</th>
 			<th scope="col">Type</th>
-			<th scope="col">Media</th>
             <th scope="col">Action</th>
           </tr>
         </thead>
@@ -184,12 +183,7 @@
 			</td>
 
 			<td>{{$event->type}}</td>
-            <td>
-				@foreach ($event->media as $media)
-				<a href="{{$media->urls}}">{{$media->urls}}</a>
-				@endforeach
-			</td>
-            <td> <button class="btn1"> <a href="" style="color: #000">View</button></a>
+            <td> <button class="btn1"> <a href="show/{{$event->id}}" style="color: #000">View</button></a>
            <button class="btn2"> <a href="" style="color: #000" >Delete</button></a> </td>
           </tr>
          @endforeach

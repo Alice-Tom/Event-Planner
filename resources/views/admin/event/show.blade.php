@@ -13,10 +13,11 @@
         >
             @csrf
             @include('forms.event_form')
+            
         </form>
-        <div class="card-deck ml-2">
+       
             @foreach ($event->getMedia($event->token) as $event_images)
-            <div class="card" style="width: 18rem;">
+            <div class="card" style="width: 18rem;" >
                 {{-- <img src="{{ $event_images->getUrl('image_preview') }}" > --}}
                 {{ $event_images('thumb') }}
                 <div class="card-body">
@@ -24,6 +25,9 @@
                 </div>
             </div>
             @endforeach
+            <div class="form-row-last">
+           <a href="/media/delete-multiple/{{$event->media" ><input type="submit" name="register" class="delete" value="Delete All"></a>
+        </div>
         </div>
     </div>
 </div>
