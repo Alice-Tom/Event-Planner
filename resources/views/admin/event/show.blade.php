@@ -17,16 +17,21 @@
         </form>
        
             @foreach ($event->getMedia($event->token) as $event_images)
-            <div class="card" style="width: 18rem;" >
+            <div class="card" style="width: 13rem;" >
+                <br>
                 {{-- <img src="{{ $event_images->getUrl('image_preview') }}" > --}}
                 {{ $event_images('thumb') }}
                 <div class="card-body">
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <p class="card-text">
+                    <i class="fas fa-trash-alt" title="Delete Image"></i>
+                    <i class="far fa-eye" title="View Image"></i>
+                    
+                </p>
                 </div>
             </div>
             @endforeach
             <div class="form-row-last">
-           <a href="/media/delete-multiple/{{$event->media" ><input type="submit" name="register" class="delete" value="Delete All"></a>
+           <a href="/media/delete-multiple/{{$event->media}}" ><input type="submit" name="register" class="delete" value="Delete All"></a>
         </div>
         </div>
     </div>

@@ -333,6 +333,7 @@ input:-moz-placeholder { /* Firefox 18- */
 
 .card {
 	display: inline-grid;
+	padding-left: 5rem;
 }
 
 .delete
@@ -359,5 +360,15 @@ input:-moz-placeholder { /* Firefox 18- */
 	text-align: center;
 	height: 50px;
 	margin-left: 40%;
-	
+}
+
+.fa-trash-alt
+{
+	cursor: pointer;
+}
+
+p
+{
+	display: inline-flex;
+	padding-left: 4rem;
 }
