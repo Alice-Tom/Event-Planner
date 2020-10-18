@@ -13,9 +13,9 @@
         >
             @csrf
             @include('forms.event_form')
-            
+
         </form>
-       
+
             @foreach ($event->getMedia($event->token) as $event_images)
             <div class="card" style="width: 13rem;" >
                 <br>
@@ -23,15 +23,15 @@
                 {{ $event_images('thumb') }}
                 <div class="card-body">
                 <p class="card-text">
-                    <i class="fas fa-trash-alt" title="Delete Image"></i>
-                    <i class="far fa-eye" title="View Image"></i>
-                    
+                    <i class="fas fa-trash-alt delete_media" title="Delete Image" data-media_id="{{ $event_images->id }}"></i>
+                    <i class="far fa-eye view_media" title="View Image" data-media_id="{{ $event_images->id }}"></i>
+
                 </p>
                 </div>
             </div>
             @endforeach
             <div class="form-row-last">
-           <a href="/media/delete-multiple/{{$event->media}}" ><input type="submit" name="register" class="delete" value="Delete All"></a>
+           <a href="/media/delete-multiple/{{$event->id}}" ><input type="submit" name="register" class="delete" value="Delete All" id="delete-all"></a>
         </div>
         </div>
     </div>
@@ -51,24 +51,28 @@
             maxFiles: 1,
 		});
 
-        $('#delete_media').on('click', (e) => {
+        $('.delete_media').on('click', function(e) {
             e.preventDefault();
 
             let media = $(this).data('media_id');
 
-            $.ajax({
-                url: `/admin/event/media/delete-single/${media}`,
+            console.log('media-id', media)
 
-                method: 'DELETE',
+            let url = `/admin/event/media/delete-single/${media}`
 
-                success: function(data) {
-                    console.log(data)
-                },
+            axios.delete(url)
+                 .then(response => location.reload())
+                 .catch(error => console.log(error))
+        })
 
-                error: function(error) {
-                    console.log('error', error);
-                }
-            })
+        $('#delete-all').on('click', function(e) {
+            e.preventDefault();
+
+            let url = `{{ route("admin.event.media.delete.all", $event->id) }}`
+
+            axios.delete(url)
+                 .then(response => location.reload())
+                 .catch(error => console.log(error))
         })
     });
 
