@@ -3,7 +3,7 @@
 use Illuminate\Support\Str;
 
 
-if (getenv(APP_ENV) == 'production') {
+if (getenv(APP_DEBUG) == false) {
     $url = parse_url(getenv("DATABASE_URL"));
 
     $host = $url["host"];
