@@ -168,6 +168,7 @@
             <th scope="col">Name</th>
             <th scope="col">People</th>
 			<th scope="col">Type</th>
+			<th scope="col">Url</th>
             <th scope="col">Action</th>
           </tr>
         </thead>
@@ -183,6 +184,7 @@
 			</td>
 
 			<td>{{$event->type}}</td>
+			<td> <a href="{{ route('client.event.index', $event->token) }}">{{ route('client.event.index', $event->token) }}</a> </td>
             <td> <button class="btn1"> <a href="show/{{$event->id}}" style="color: #000">View</button></a>
            <button class="btn2"> <a href="" style="color: #000" >Delete</button></a> </td>
           </tr>

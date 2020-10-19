@@ -67,8 +67,8 @@
 		<div class="banner_content text-center">
             <img class="head" src="{{ asset('images/shap1.jpg') }}" alt="">
                 <h1>{{$event->name}}</h1>
-             <img class="head2" src="{{ asset('images/shap2.jpg') }}" alt="">     
-                
+             <img class="head2" src="{{ asset('images/shap2.jpg') }}" alt="">
+
 		</div>
 
 	<!-- Start Banner -->
