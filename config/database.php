@@ -21,7 +21,7 @@ if (getenv("APP_DEBUG") == false && (getenv("APP_ENV") == 'production')) {
             'database' => $database,
             'username' => $username,
             'password' => $password,
-            'charset'  => 'utf8mb4',
+            'charset'  => 'utf8',
             'prefix'   => '',
             'schema'   => 'public',
         ],
