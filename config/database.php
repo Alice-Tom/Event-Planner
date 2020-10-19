@@ -3,13 +3,14 @@
 use Illuminate\Support\Str;
 
 
-if (getenv("APP_DEBUG") == false) {
-    $url = parse_url(getenv("DATABASE_URL"));
+$url = parse_url(getenv("DATABASE_URL"));
 
-    $host = $url["host"];
-    $username = $url["user"];
-    $password = $url["pass"];
-    $database = substr($url["path"], 1);
+$host = $url["host"];
+$username = $url["user"];
+$password = $url["pass"];
+$database = substr($url["path"], 1);
+
+if (getenv("APP_DEBUG") == false && (getenv("APP_ENV") == 'production')) {
 
     return [
         'default' => 'pgsql',
@@ -25,6 +26,7 @@ if (getenv("APP_DEBUG") == false) {
             'schema'   => 'public',
         ],
     ];
+
 } else {
 
     return [
@@ -170,6 +172,7 @@ if (getenv("APP_DEBUG") == false) {
         ],
 
     ];
+
 }
 
 
