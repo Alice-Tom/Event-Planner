@@ -2,7 +2,32 @@
 
 use Illuminate\Support\Str;
 
-if ((getenv("APP_DEBUG") == false || getenv("APP_DEBUG") == true ) && (getenv("APP_ENV") == 'production')) {
+if (getenv("APP_DEBUG") == false && (getenv("APP_ENV") == 'production')) {
+    
+    $url = parse_url(getenv("DATABASE_URL"));
+
+    $host = $url["host"];
+    $username = $url["user"];
+    $password = $url["pass"];
+    $database = substr($url["path"], 1);
+
+    return [
+        'default' => 'pgsql',
+
+        'pgsql' => [
+            'driver'   => 'pgsql',
+            'host'     => $host,
+            'database' => $database,
+            'username' => $username,
+            'password' => $password,
+            'charset'  => 'utf8',
+            'prefix'   => '',
+            'schema'   => 'public',
+        ],
+    ];
+
+} elseif(getenv("APP_DEBUG") == true && (getenv("APP_ENV") == 'production')) {
+
     $url = parse_url(getenv("DATABASE_URL"));
 
     $host = $url["host"];
@@ -172,5 +197,3 @@ if ((getenv("APP_DEBUG") == false || getenv("APP_DEBUG") == true ) && (getenv("A
     ];
 
 }
-
-
