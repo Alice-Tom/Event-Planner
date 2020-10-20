@@ -13,16 +13,17 @@ if (getenv("APP_ENV") == 'production'){
 
     return [
         'default' => 'pgsql',
-
-        'pgsql' => [
-            'driver'   => 'pgsql',
-            'host'     => $host,
-            'database' => $database,
-            'username' => $username,
-            'password' => $password,
-            'charset'  => 'utf8',
-            'prefix'   => '',
-            'schema'   => 'public',
+        'connections' => [
+            'pgsql' => [
+                'driver'   => 'pgsql',
+                'host'     => $host,
+                'database' => $database,
+                'username' => $username,
+                'password' => $password,
+                'charset'  => 'utf8',
+                'prefix'   => '',
+                'schema'   => 'public',
+            ],
         ],
     ];
 
