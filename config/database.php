@@ -10,7 +10,7 @@ $username = $url["user"];
 $password = $url["pass"];
 $database = substr($url["path"], 1);
 
-if (getenv("APP_DEBUG") == false && (getenv("APP_ENV") == 'production')) {
+if ((getenv("APP_DEBUG") == false || getenv("APP_DEBUG") == true ) && (getenv("APP_ENV") == 'production')) {
 
     return [
         'default' => 'pgsql',
