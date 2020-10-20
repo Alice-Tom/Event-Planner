@@ -56,8 +56,6 @@
 
             let media = $(this).data('media_id');
 
-            console.log('media-id', media)
-
             let url = `/admin/event/media/delete-single/${media}`
 
             axios.delete(url)

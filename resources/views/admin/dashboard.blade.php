@@ -186,7 +186,7 @@
 			<td>{{$event->type}}</td>
 			<td> <a href="{{ route('client.event.index', $event->token) }}">{{ route('client.event.index', $event->token) }}</a> </td>
             <td> <button class="btn1"> <a href="show/{{$event->id}}" style="color: #000">View</button></a>
-           <button class="btn2"> <a href="" style="color: #000" >Delete</button></a> </td>
+           <button class="btn2"> <a href="" style="color: #000" class="delete-event" data-event_id="{{ $event->id }}" >Delete</button></a> </td>
           </tr>
          @endforeach
         </tbody>
@@ -199,10 +199,11 @@
 
 
 
-<!-- ALL JS FILES -->
-<script src="{{ asset('js/jquery.min.js') }}"></script>
+    <!-- ALL JS FILES -->
+    <script src="{{ asset('js/jquery.min.js') }}"></script>
 	<script src="{{ asset('js/popper.min.js') }}"></script>
-	<script src="{{ asset('js/bootstrap.min.js') }}"></script>
+    <script src="{{ asset('js/bootstrap.min.js') }}"></script>
+
     <!-- ALL PLUGINS -->
 	<script src="{{ asset('js/jquery.magnific-popup.min.js') }}"></script>
     <script src="{{ asset('js/jquery.pogo-slider.min.js') }}"></script>
@@ -212,7 +213,20 @@
     <script src="{{ asset('js/contact-form-script.js') }}"></script>
     <script src="{{ asset('js/custom.js') }}"></script>
 
+    {{-- Axios --}}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.20.0/axios.min.js" integrity="sha512-quHCp3WbBNkwLfYUMd+KwBAgpVukJu5MncuQaWXgCrfgcxCJAq/fo+oqrRKOj+UKEmyMCG3tb8RB63W+EmrOBg==" crossorigin="anonymous"></script>
 
+    <script>
+        $('.delete-event').on('click', function(e) {
+            let event_id = $(this).data('event_id')
+
+            let url = `/admin/event/delete/${event_id}`
+
+            axios.delete(url)
+                 .then(response => location.reload())
+                 .catch(error => console.log(error))
+        })
+    </script>
 
 </body>
 </html>

@@ -148,7 +148,9 @@ class EventController extends Controller
      */
     public function destroy(Event $event)
     {
-        //
+        $event->clearMediaCollection($event->token);
+        $event->clearMediaCollection('dp-'.$event->token);
+        $event->delete();
     }
 
     public function deleteSingle(Media $media)

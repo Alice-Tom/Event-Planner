@@ -36,6 +36,7 @@ Route::prefix('admin/event')->group(function () {
     Route::post('/show/{event}', 'Admin\EventController@update')->name('admin.event.update');
     Route::delete('/media/delete-single/{media}', 'Admin\EventController@deleteSingle')->name('admin.event.media.delete.single');
     Route::delete('/media/delete-multiple/{event}', 'Admin\EventController@deleteAll')->name('admin.event.media.delete.all');
+    Route::delete('/delete/{event}', 'Admin\EventController@destroy')->name('admin.event.delete');
 });
 
 Route::get('/dashboard', 'DashboardController@index');
