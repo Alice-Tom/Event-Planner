@@ -86,14 +86,14 @@
                             </div>
                         </div>
                         @endforeach
-                        <div class="pogoSlider-slide" data-transition="zipReveal" data-duration="1500" style="background-image:url({{ $event_images->getUrl() }});">
+                        {{-- <div class="pogoSlider-slide" data-transition="zipReveal" data-duration="1500" style="background-image:url({{ $event_images->getUrl() }});">
                             <div class="lbox-caption">
                                 <div class="lbox-details">
                                     <p><strong>Let us be the one to make your day special</strong></p>
                                     <a href="" class="btn ">Contact</a>
                                 </div>
                             </div>
-                        </div>
+                        </div> --}}
 				</div><!-- .pogoSlider -->
 			</div>
 		</div>
