@@ -65,7 +65,7 @@
 		<div class="form-row">
 		{{-- description --}}
 			<label>Description</label>
-				<textarea id="description" rows="4" cols="47" class="input-text" name="description" required>{{$event->description ?? ''}}</textarea>
+				<textarea id="description" rows="4" cols="47" class="input-text" name="description">{{$event->description ?? ''}}</textarea>
 		</div>
 		<div class="form-row">
 			<div class="input-field">
