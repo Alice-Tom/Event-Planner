@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
      <!-- Site Metas -->
-    <title>Flavour Events</title>
+    <title>Flavor Weddings</title>
     <meta name="keywords" content="">
     <meta name="description" content="">
     <meta name="author" content="">
@@ -116,14 +116,14 @@
 					<h2><span>Gallery</span></h2>
 				</div>
 			</div>
+            <ul class="simplefilter">
+                {{-- <li class="active" data-filter="all">ALL</li>
+                <li data-filter="1">VIDEOS</li>
+                <li data-filter="2">PICTURES</li> --}}
+                <li> <a href="" id="download_all">DOWNLOAD ALL</a> </li>
+                <li> <a href="{{ route('client.event.media.download.all.zip', $event->id ) }}" id="download_zip">DOWNLOAD ZIP</a> </li>
+            </ul>
 			<div class="gallery_gds">
-				<ul class="simplefilter">
-					<li class="active" data-filter="all">ALL</li>
-					<li data-filter="1">VIDEOS</li>
-					<li data-filter="2">PICTURES</li>
-					<li> <a href="" id="download_all">DOWNLOAD ALL</a> </li>
-                    <li> <a href="{{ route('client.event.media.download.all.zip', $event->id ) }}" id="download_zip">DOWNLOAD ZIP</a> </li>
-				</ul>
 				<div class="filtr-container">
                     @foreach ($event->getMedia($event->token) as $event_images)
                         <div class="col-md-4 col-sm-4 col-xs-6 filtr-item" data-category="2" data-sort="Luminous night">

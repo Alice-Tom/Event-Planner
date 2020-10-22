@@ -3,7 +3,7 @@
 <html>
 <head>
 	<meta charset="utf-8">
-	<title>The Event Planner</title>
+	<title>Flavor Weddings</title>
 	<!-- Mobile Specific Metas -->
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 	<!-- Font-->
@@ -11,9 +11,9 @@
 	<!-- Main Style Css -->
 	<link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/css/select2.min.css" rel="stylesheet" />
 	<link rel="stylesheet" href="uploads/css/style.css"/>
-	
+
 </head>
-		
+
 <body class="form-v9">
 	<div class="page-content">
 		<div class="form-v9-content" style="background-image: url('uploads/images/bg1.jpg')">

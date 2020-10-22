@@ -9,7 +9,7 @@ element{
 body {
 	margin:  0;
 	font-family: 'Marck Script', cursive;
-	
+
 }
 
 h2{
@@ -26,7 +26,7 @@ h2{
 .page-content {
 	width: 100%;
 	margin:  0 auto;
-	background: #dd666c;
+	background: #F0E3DB;
 	display: flex;
 	display: -webkit-flex;
 	justify-content: center;
@@ -118,8 +118,8 @@ label{
 	position: relative;
 	left: 17%;
 	cursor: pointer;
-	
-	
+
+
 }
 
 /* textarea */
@@ -190,7 +190,7 @@ textarea#description.input-text {
    left: 16%;
    cursor: pointer;
 
-} 
+}
 
 /* eye toogle */
 .far {

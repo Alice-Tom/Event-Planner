@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
      <!-- Site Metas -->
-    <title>Flavour Events</title>
+    <title>Flavor Weddings</title>
     <meta name="keywords" content="">
     <meta name="description" content="">
     <meta name="author" content="">
@@ -79,7 +79,7 @@
 					<div class="pogoSlider-slide" data-transition="zipReveal" data-duration="1500" style="background-image:url(images/slider-01.jpg);">
 						<div class="lbox-caption">
 							<div class="lbox-details">
-								<h1>Flavour Events</h1>
+								<h1>Flavor Weddings</h1>
 
 								<p><strong>Let us be the one to make your day special</strong></p>
 								<a href="" class="btn ">Contact</a>
@@ -89,7 +89,7 @@
 					<div class="pogoSlider-slide" data-transition="blocksReveal" data-duration="1500" style="background-image:url(images/slider-02.jpg);">
 						<div class="lbox-caption">
 							<div class="lbox-details">
-							<h1>Flavour Events</h1>
+							<h1>Flavor Weddings</h1>
 
 								<p><strong>We make things happen</strong></p>
 								<a href="#" class="btn ">Contact</a>
@@ -99,7 +99,7 @@
 					<div class="pogoSlider-slide" data-transition="shrinkReveal" data-duration="2000" style="background-image:url(images/slider-03.jpg);">
 						<div class="lbox-caption">
 							<div class="lbox-details">
-							<h1>Flavour Events</h1>
+							<h1>Flavor Weddings</h1>
 
 								<p><strong>Let us be the one to make your day special</strong></p>
 								<a href="#" class="btn">Contact</a>

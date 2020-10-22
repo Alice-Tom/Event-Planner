@@ -3,30 +3,30 @@
 <html lang="en">
     <head>
         <meta charset="utf-8" />
-        
-        <title>Flavour Events</title>
-        
+
+        <title>Flavor Weddings</title>
+
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        
+
 
          <!-- Main Style Css -->
          <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/css/select2.min.css" rel="stylesheet" />
          <link rel="stylesheet" href="{{asset('css/css/style.css')}}"/>
-         
+
         <!-- Mobile Specific Metas -->
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-            
+
         <!-- Font-->
         <link rel="stylesheet" type="text/css" href="{{asset('css/css/nunito-font.css')}}">
 
-       
-       
+
+
          <!-- CSS to style image uploader -->
-        <link rel="stylesheet" href="{{ asset('css/image-uploader.min.css') }}" /> 
-        
+        <link rel="stylesheet" href="{{ asset('css/image-uploader.min.css') }}" />
+
 
     </head>
-    
+
     <body class="form-v9">
 
         @yield('content')
@@ -41,7 +41,7 @@
     <!-- The jQuery UI widget factory, can be omitted if jQuery UI is already included -->
     <script src="{{ asset('js/image-uploader.min.js') }}"></script>
     <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/js/select2.min.js"></script>
-    
+
     <script>
         $(document).ready(function(){
             $('.media-upload').imageUploader({
@@ -54,6 +54,6 @@
                 tags: true
             });
         });
-    </script>    
+    </script>
     </body>
 </html>

@@ -60,7 +60,7 @@ h6 {
 
 h1 {
 	font-size: 40px;
-	color: #dd666c;
+	color: #DD666C;
 	font-family: 'Marck Script', cursive;
 	position: relative;
 	top: 5px;
@@ -68,7 +68,7 @@ h1 {
 
 h2 {
 	font-size: 35px;
-	color: #dd666c;
+	color: #DD666C;
 	font-family: 'Marck Script', cursive;
 
 }
@@ -163,7 +163,7 @@ button:focus{
 
 
 /*------------------------------------------------------------------
-    LOADER 
+    LOADER
 -------------------------------------------------------------------*/
 
 #preloader {
@@ -173,7 +173,7 @@ button:focus{
     right: 0;
     bottom: 0;
     left: 0;
-    background: #dd666c;
+    background: #F0E3DB;
     z-index: 11000;
     position: fixed;
     display: block;
@@ -196,7 +196,7 @@ HTML
 10
 11
 12
-	
+
 <div class="container">
     <div class="row">
         <div class="col-md-12">
@@ -265,7 +265,7 @@ CSS
 53
 54
 55
-	
+
 .demo{
     background: #4b4673;
 }
@@ -339,12 +339,12 @@ License Terms
 }
 
 .top-header .navbar .navbar-collapse ul li a.active{
-	background: #dd666c;
+	background: #F0E3DB;
 	color: #ffffff;
 }
 
 .top-header .navbar .navbar-collapse ul li a:hover{
-	background: #63c7bd;
+	background: #F0E3DB;
 	color: #ffffff;
 }
 
@@ -393,11 +393,11 @@ License Terms
 }
 
 .navbar-toggler:hover{
-	border: 1px solid #dd666c;
+	border: 1px solid #F0E3DB;
 }
 
 .navbar-toggler:hover span{
-	background: #dd666c;
+	background: #F0E3DB;
 }
 
 
@@ -458,12 +458,12 @@ License Terms
 	z-index: 3;
 }
 .lbox-details p strong{
-	color: #dd666c;
+	color: #DD666C;
 	font-size: 40px;
 	font-family: 'Marck Script', cursive;
 }
 .lbox-details a.btn{
-	background: #63c7bd;
+	background: #F0E3DB;
 	padding: 10px 20px;
 	font-size: 20px;
 	text-transform: uppercase;
@@ -473,12 +473,12 @@ License Terms
 	z-index: 3;
 }
 .lbox-details a.btn:hover{
-	background: #dd666c;
+	background: #F0E3DB;
 }
 
 
 .dp{
-	
+
 	width:100%;
 	height:0;
 	padding-bottom:50% !important;
@@ -489,7 +489,7 @@ License Terms
 }
 .banner{
 	width: 100%;
-	
+
 
 }
 /*------------------------------------------------------------------
@@ -510,7 +510,7 @@ License Terms
 	color: #222222;
 }
 .title-box h2 span{
-	color: #dd666c;
+	color: #DD666C;
 	text-decoration: underline;
 }
 .about-main-info h2{
@@ -518,7 +518,7 @@ License Terms
 	font-family: 'Marck Script', cursive;
 }
 .about-main-info h2 span{
-	color: #dd666c;
+	color: #DD666C;
 	text-decoration: underline;
 }
 
@@ -663,12 +663,12 @@ License Terms
 }
 
 .main-timeline-box .time-line-date-content .mbr-timeline-date{
-	background: #dd666c;
-	color: #ffffff;
+	background: #F0E3DB;
+	color: #DD666C;
 }
 .main-timeline-box .reverse .time-line-date-content .mbr-timeline-date{
-	background: #63c7bd;
-	color: #ffffff;
+	background: #F0E3DB;
+	color: #DD666C;
 }
 
 
@@ -753,7 +753,7 @@ License Terms
 	-moz-transition: all 0.3s ease-in-out;
 }
 .gallery-box ul li a .overlay{
-	background: #dd666c;
+	background: #F0E3DB;
 	color: #ffffff;
 	font-size: 22px;
 	text-align: center;
@@ -796,7 +796,7 @@ License Terms
 }
 
 .event-inner a{
-	background: #dd666c;
+	background: #F0E3DB;
 	color: #ffffff;
 	padding: 5px 10px;
 	display: inline-block;
@@ -804,7 +804,7 @@ License Terms
 	font-weight: 500;
 }
 .event-inner a:hover{
-	background: #63c7bd;
+	background: #F0E3DB;
 }
 
 /*------------------------------------------------------------------
@@ -838,7 +838,7 @@ License Terms
 }
 
 .submit-button .btn-common{
-	background-color: #63c7bd;
+	background-color: #F0E3DB;
 	height: 45px;
 	line-height: 45px;
 	font-size: 16px;
@@ -860,7 +860,7 @@ License Terms
 	transition: all 0.3s;
 }
 .submit-button .btn-common:hover{
-	background-color: #dd666c;
+	background-color: #F0E3DB;
 }
 
 .custom-select{
@@ -887,10 +887,10 @@ select.form-control:not([size]):not([multiple]){
 }
 
 .footer-box .footer-company-name a{
-	color: #dd666c;
+	color: #DD666C;
 }
 .footer-box .footer-company-name a:hover{
-	color: #63c7bd;
+	color: #DD666C;
 }
 
 

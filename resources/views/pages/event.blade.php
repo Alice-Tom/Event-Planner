@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
 
-        <title>The Event Planner</title>
+        <title>Flavor Weddings</title>
 
         <!-- Mobile Specific Metas -->
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
